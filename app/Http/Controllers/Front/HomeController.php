@@ -11,4 +11,24 @@ class HomeController extends Controller
     {
         return view('front.home_1');
     }
+
+    public function home_2()
+    {
+        return view('front.home_2');
+    }
+
+    public function home_3()
+    {
+        return view('front.home_3');
+    }
+
+    public function home_4()
+    {
+        return view('front.home_4');
+    }
+
+    public function home_5()
+    {
+        return view('front.home_5');
+    }
 }

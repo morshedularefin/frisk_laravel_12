@@ -1,4 +1,4 @@
-<header class="nav-header header-layout1">
+<header class="nav-header header-layout2">
     <div class="sticky-wrapper">
         <!-- Main Menu Area -->
         <div class="menu-area">
@@ -6,7 +6,7 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-auto">
                         <div class="header-logo">
-                            <a href="{{ url('/') }}"><img src="{{ asset('dist/front/img/logo.svg') }}" alt="logo"></a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('dist/front/img/logo-white-sm.svg') }}" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-auto ms-auto">
@@ -20,8 +20,8 @@
                                         </span>
                                     </a>
                                     <ul class="sub-menu">
-                                        <li class="active"><a href="{{ url('/') }}">Digital Agency</a></li>
-                                        <li><a href="{{ route('home_2') }}">Creative Agency</a></li>
+                                        <li><a href="{{ url('/') }}">Digital Agency</a></li>
+                                        <li class="active"><a href="{{ route('home_2') }}">Creative Agency</a></li>
                                         <li><a href="{{ route('home_3') }}">Design Studio</a></li>
                                         <li><a href="{{ route('home_4') }}">Modern Agency</a></li>
                                         <li><a href="{{ route('home_5') }}">Startup Agency</a></li>

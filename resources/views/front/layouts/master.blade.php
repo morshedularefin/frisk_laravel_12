@@ -1,11 +1,12 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Frisk - Creative Agency Laravel Script</title>
+    <title>{{ config('app.name', 'Frisk - Creative Agency Laravel Script') }}</title>
     <meta name="description" content="Frisk - Creative Agency Laravel Script">
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('dist/front/img/favicons/favicon.png') }}">
@@ -32,9 +33,6 @@
     
     @include('front.layouts.mobile_menu')
 
-    @include('front.layouts.header_1')
-
-    
     @yield('main_content')
 
     @include('front.layouts.footer_1')

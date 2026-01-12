@@ -5,18 +5,18 @@ Mobile Menu
     <div class="mobile-menu-area">
         <button class="menu-toggle"><i class="fas fa-times"></i></button>
         <div class="mobile-logo">
-            <a href="index.html"><img src="{{ asset('dist/front/img/logo.svg') }}" alt="Ovation"></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('dist/front/img/logo.svg') }}" alt="Ovation"></a>
         </div>
         <div class="mobile-menu">
             <ul>
                 <li class="menu-item-has-children">
                     <a href="javascript:void;">Home</a>
                     <ul class="sub-menu">
-                        <li class="active"><a href="index.html">Digital Agency</a></li>
-                        <li><a href="home-2.html">Creative Agency</a></li>
-                        <li><a href="home-3.html">Design Studio</a></li>
-                        <li><a href="home-4.html">Modern Agency</a></li>
-                        <li><a href="home-5.html">Startup Agency</a></li>
+                        <li class="active"><a href="{{ url('/') }}">Digital Agency</a></li>
+                        <li><a href="{{ route('home_2') }}">Creative Agency</a></li>
+                        <li><a href="{{ route('home_3') }}">Design Studio</a></li>
+                        <li><a href="{{ route('home_4') }}">Modern Agency</a></li>
+                        <li><a href="{{ route('home_5') }}">Startup Agency</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children">

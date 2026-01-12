@@ -1,6 +1,9 @@
 @extends('front.layouts.master')
 
 @section('main_content')
+
+@include('front.layouts.header_1')
+
 <!--==============================
 Hero Area
 ==============================-->
