@@ -1,0 +1,84 @@
+<!--==============================
+Mobile Menu
+============================== -->
+<div class="mobile-menu-wrapper">
+    <div class="mobile-menu-area">
+        <button class="menu-toggle"><i class="fas fa-times"></i></button>
+        <div class="mobile-logo">
+            <a href="index.html"><img src="{{ asset('dist/front/img/logo.svg') }}" alt="Ovation"></a>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li class="menu-item-has-children">
+                    <a href="javascript:void;">Home</a>
+                    <ul class="sub-menu">
+                        <li class="active"><a href="index.html">Digital Agency</a></li>
+                        <li><a href="home-2.html">Creative Agency</a></li>
+                        <li><a href="home-3.html">Design Studio</a></li>
+                        <li><a href="home-4.html">Modern Agency</a></li>
+                        <li><a href="home-5.html">Startup Agency</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="javascript:void;">Pages</a>
+                    <ul class="sub-menu">
+                        <li><a href="about.html">About Page</a></li>
+                        <li><a href="service.html">Service Page</a></li>
+                        <li><a href="team.html">Team Page</a></li>
+                        <li><a href="pricing.html">Pricing Page</a></li>
+                        <li><a href="cart.html">Cart Page</a></li>
+                        <li><a href="checkout.html">Checkout Page</a></li>
+                        <li><a href="faq.html">FAQ Page</a></li>
+                        <li><a href="error.html">Error Page</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="shop.html">Shop</a>
+                </li>
+                <li>
+                    <a href="project.html">Portfolio</a>
+                </li>
+                <li>
+                    <a href="blog.html">Blog</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-wrap">
+            <h6>27 Division St, New York,</h6>
+            <h6>NY 10002, USA</h6>
+        </div>
+        <div class="sidebar-wrap">
+            <h6><a href="tel:1800123654987">+1 800 123 654 987 </a></h6>
+            <h6><a href="mailto:frisk.agency@mail.com">frisk.agency@mail.com</a></h6>
+        </div>
+        <div class="social-btn style3">
+            <a href="https://www.facebook.com/">
+                <span class="link-effect">
+                    <span class="effect-1"><i class="fab fa-facebook"></i></span>
+                    <span class="effect-1"><i class="fab fa-facebook"></i></span>
+                </span>
+            </a>
+            <a href="https://instagram.com/">
+                <span class="link-effect">
+                    <span class="effect-1"><i class="fab fa-instagram"></i></span>
+                    <span class="effect-1"><i class="fab fa-instagram"></i></span>
+                </span>
+            </a>
+            <a href="https://twitter.com/">
+                <span class="link-effect">
+                    <span class="effect-1"><i class="fab fa-twitter"></i></span>
+                    <span class="effect-1"><i class="fab fa-twitter"></i></span>
+                </span>
+            </a>
+            <a href="https://dribbble.com/">
+                <span class="link-effect">
+                    <span class="effect-1"><i class="fab fa-dribbble"></i></span>
+                    <span class="effect-1"><i class="fab fa-dribbble"></i></span>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
