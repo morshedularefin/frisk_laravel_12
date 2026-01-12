@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2026 at 02:22 AM
+-- Generation Time: Jan 12, 2026 at 09:21 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel_12_admin_template_mastering`
+-- Database: `frisk_laravel`
 --
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `avatar`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'admin_1767838824.jpg', 'Super Admin', 'admin@example.com', '2026-01-05 02:56:17', '$2y$12$3hi30oSUpg0vr8LsnLi.9.pTZ3EOSn.uS/zBn2bBw0nPwanG5oNSy', 'PzW1MiQTB0T0iFeyVmDnbzsclBU6dhtsUSKqbuqwkRfht796dvmsewyzKv8q', '2026-01-05 02:56:17', '2026-01-07 20:21:42');
+(2, 'admin_1767838824.jpg', 'Super Admin', 'admin@example.com', '2026-01-05 02:56:17', '$2y$12$3hi30oSUpg0vr8LsnLi.9.pTZ3EOSn.uS/zBn2bBw0nPwanG5oNSy', 'jNOav9gkbhf5ZeEnrqef6Wueu2ZVxXi8pOSBGt91lXMH2eX1g94gzXCNv0OP', '2026-01-05 02:56:17', '2026-01-07 20:21:42');
 
 -- --------------------------------------------------------
 
@@ -187,8 +187,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('46gti6D5P1sHadB3vI744N4u2qU3ueqW2E3cZxrU', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoicUZybDVmcXg3elNqbGpiaGtKWEpMbGxObUFKSEV4YlRRVlVsWU9vcyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9wcm9maWxlIjtzOjU6InJvdXRlIjtzOjEzOiJhZG1pbi5wcm9maWxlIjt9czozOiJ1cmwiO2E6MDp7fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1767785321),
-('aT8630vEgIwSZSDZJgkEArog8FPFqX9nskZQd68J', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUDdVVU9MRkJndFhVbkp5V2tLM2tHY2Eya1hjS0JFdTlGdGJCdlpuayI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9wcm9maWxlIjtzOjU6InJvdXRlIjtzOjEzOiJhZG1pbi5wcm9maWxlIjt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1767838903);
+('q232jQJ7oSVW20btoknpevnuJEwNBqkzx1opVWrr', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiNlNheGVSbUxCZzRZeGNwbDZWMmRVVTZBbmtXWVFyRW9KRXlmM3VKTSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO3M6NToicm91dGUiO3M6MTU6ImFkbWluLmRhc2hib2FyZCI7fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1767845218),
+('Sdb43EzW6OqwX4dnd7rm4ckxf1n8YOxD6I8kRvfJ', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoidnhQT0cxNEZucDZCbXVKY1phRHhkSG9DMklZUDMyald0aE41Vlh1cCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo2OiJob21lXzEiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1768209515);
 
 -- --------------------------------------------------------
 
