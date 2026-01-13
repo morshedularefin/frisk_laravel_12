@@ -451,4 +451,5 @@ Blog Area
         </div>
     </div>
 </section>
+@include('front.layouts.footer_1')
 @endsection

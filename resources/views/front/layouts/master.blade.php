@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body class="{{ Request::is('home-4') ? 'bg-title' : '' }}">
     <div class="preloader">
         <div class="preloader-inner">
             <span></span>
@@ -34,8 +34,6 @@
     @include('front.layouts.mobile_menu')
 
     @yield('main_content')
-
-    @include('front.layouts.footer_1')
     
     <div class="scroll-top">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">

@@ -399,5 +399,5 @@ CTA Area
         </div>
     </div>
 </div>
-
+@include('front.layouts.footer_1')
 @endsection
