@@ -561,7 +561,9 @@ select,
 .form-control,
 .form-select,
 textarea,
-input {
+input[type='text'],
+input[type='email'],
+input[type='password'] {
   height: 55px;
   padding: 0 30px;
   border: 1px solid transparent;
@@ -12482,7 +12484,10 @@ blockquote p {
     margin-top: 30px
 }
 
-.cwa_dashboard_profile_edit_info input,.cwa_dashboard_profile_edit_info textarea {
+.cwa_dashboard_profile_edit_info input[type="text"],
+.cwa_dashboard_profile_edit_info input[type="email"],
+.cwa_dashboard_profile_edit_info input[type="password"],
+.cwa_dashboard_profile_edit_info textarea {
     margin-bottom: 20px;
     border-radius: 0;
     -webkit-border-radius: 0;
@@ -12976,4 +12981,18 @@ blockquote p {
 
 .iziToast.iziToast-color-green {
     background: rgba(166, 239, 184, 1) !important;
+}
+
+.cwa_dashboard_profile_edit_info label {
+    font-weight: 600;
+}
+
+.cwa_dashboard_profile_edit_info input, 
+.cwa_dashboard_profile_edit_info textarea {
+    font-weight: 400;
+}
+
+.breadcumb-wrapper-user {
+    padding-top: 80px;
+    padding-bottom: 80px;
 }

@@ -99,7 +99,7 @@
                                 </span>
                             </button>
                             @if(Auth::guard('web')->check())
-                            <a href="{{ route('dashboard') }}" class="btn">
+                            <a href="{{ route('user.dashboard') }}" class="btn">
                                 <span class="link-effect">
                                     <span class="effect-1">DASHBOARD</span>
                                     <span class="effect-1">DASHBOARD</span>

@@ -2,19 +2,23 @@
     <div class="cwa_dashboard_sidebar">
         <div class="cwa_dashboard_sidebar_top">
             <div class="cwa_dashboard_profile_img">
-                <img id="profile_img" src="{{ asset('dist/front/img/user.png') }}" alt="" class="img-fluid w-100 h-100">
+                @if(Auth::guard('web')->user()->avatar == '')
+                <img id="profile_img" src="{{ asset('uploads/default.png') }}" alt="" class="img-fluid w-100 h-100">
+                @else
+                <img id="profile_img" src="{{ asset('uploads/'.Auth::guard('web')->user()->avatar) }}" alt="" class="img-fluid w-100 h-100">
+                @endif
             </div>
             <h5>{{ Auth::guard('web')->user()->name }}</h5>
             <p>{{ Auth::guard('web')->user()->email }}</p>
         </div>
         <ul class="cwa_deshboard_menu">
             <li>
-                <a class="{{ Request::is('user/dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                <a class="{{ Request::is('user/dashboard') ? 'active' : '' }}" href="{{ route('user.dashboard') }}">
                     <i class="fas fa-home"></i> Dashboard
                 </a>
             </li>
             <li>
-                <a class="" href="user-profile.html">
+                <a class="{{ Request::is('user/profile') ? 'active' : '' }}" href="{{ route('user.profile') }}">
                     <i class="fas fa-user-tie"></i> Profile
                 </a>
             </li>

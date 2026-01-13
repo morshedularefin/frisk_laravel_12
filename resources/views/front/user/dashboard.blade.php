@@ -2,7 +2,7 @@
 
 @section('main_content')
 
-<div class="breadcumb-wrapper" data-bg-src="{{ asset('dist/front/img/bg/breadcumb-bg1-8.jpg') }}">
+<div class="breadcumb-wrapper breadcumb-wrapper-user" data-bg-src="{{ asset('dist/front/img/bg/breadcumb-bg1-8.jpg') }}">
     <div class="container">
         <div class="breadcumb-content">
             <h1 class="breadcumb-title">Dashboard</h1>
@@ -45,7 +45,7 @@
                     <div class="cwa_profile_info">
                         <div class="cwa_profile_info_top">
                             <h4>Personal Information</h4>
-                            <a href="user-profile.html" class="btn">
+                            <a href="{{ route('user.profile') }}" class="btn">
                                 <span class="link-effect">
                                     <span class="effect-1">Edit Info</span>
                                     <span class="effect-1">Edit Info</span>
@@ -54,16 +54,14 @@
                         </div>
 
                         <ul class="">
-                            <li><span>Name:</span>Curtis Campher</li>
-                            <li><span>Phone:</span>2420 -136- 1452</li>
-                            <li class="text-lowercase"><span>Email:</span>user@gmail.com</li>
-                            <li><span>Gender:</span>Male</li>
-                            <li><span>Age:</span>45 Year</li>
-                            <li><span>Country:</span>United States</li>
-                            <li><span>Province:</span>Florida</li>
-                            <li><span>City:</span>Washington DC</li>
-                            <li><span>Zip code:</span>8834</li>
-                            <li><span>Address:</span>4A, Park Street</li>
+                            <li><span>Name:</span>{{ Auth::guard('web')->user()->name }}</li>
+                            <li><span>Email:</span>{{ Auth::guard('web')->user()->email }}</li>
+                            <li><span>Phone:</span>{{ Auth::guard('web')->user()->phone ?? '---' }}</li>
+                            <li><span>Address:</span>{{ Auth::guard('web')->user()->address ?? '---' }}</li>
+                            <li><span>Country:</span>{{ Auth::guard('web')->user()->country ?? '---' }}</li>
+                            <li><span>State:</span>{{ Auth::guard('web')->user()->state ?? '---' }}</li>
+                            <li><span>City:</span>{{ Auth::guard('web')->user()->city ?? '---' }}</li>
+                            <li><span>Zip code:</span>{{ Auth::guard('web')->user()->zip_code ?? '---' }}</li>
                         </ul>
                     </div>
                 </div>

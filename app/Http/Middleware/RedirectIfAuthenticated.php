@@ -51,7 +51,7 @@ class RedirectIfAuthenticated
     protected function defaultRedirectUri(?string $guard): string
     {
         if($guard == 'web') {
-            return route('dashboard');
+            return route('user.dashboard');
         }
         
         if($guard == 'admin') {
