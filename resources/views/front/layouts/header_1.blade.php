@@ -20,11 +20,11 @@
                                         </span>
                                     </a>
                                     <ul class="sub-menu">
-                                        <li class="active"><a href="{{ url('/') }}">Digital Agency</a></li>
-                                        <li><a href="{{ route('home_2') }}">Creative Agency</a></li>
-                                        <li><a href="{{ route('home_3') }}">Design Studio</a></li>
-                                        <li><a href="{{ route('home_4') }}">Modern Agency</a></li>
-                                        <li><a href="{{ route('home_5') }}">Startup Agency</a></li>
+                                        <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Digital Agency</a></li>
+                                        <li class=""><a href="{{ route('home_2') }}">Creative Agency</a></li>
+                                        <li class="{{ Request::is('home-3') ? 'active' : '' }}"><a href="{{ route('home_3') }}">Design Studio</a></li>
+                                        <li class=""><a href="{{ route('home_4') }}">Modern Agency</a></li>
+                                        <li class=""><a href="{{ route('home_5') }}">Startup Agency</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
