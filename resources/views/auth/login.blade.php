@@ -1,47 +1,76 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+@extends('front.layouts.master')
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+@section('main_content')
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<div class="auth-main-area">
+    <!--  Sign in Area -->
+    <section class="space signin__area">
+        <div class="container">
+            <div class="row justify-content-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <div class="col-xxl-5 col-md-9 col-lg-7 col-xl-6">
+                    <div class="cwa_sign_in_form mt_80 pb_115 xs_pb_95">
+
+                        @if(session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                        @endif
+
+                        <form method="POST" action="{{ route('login') }}" autocomplete="off">
+                            @csrf
+                            <h3>Sign in your account</h3>
+                            <div class="cwa_sign_in_input">
+                                <label>Email *</label>
+                                <input type="email" name="email" value="{{ old('email') }}">
+                                @if ($errors->has('email'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('email') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="cwa_sign_in_input">
+                                <label>Password *</label>
+                                <input id="password" type="password" name="password">
+                                @if ($errors->has('password'))
+                                    <div class="text-danger">
+                                        {{ $errors->first('password') }}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="cwa_sign_in_input d-flex flex-wrap align-items-center justify-content-between">
+                                <a href="{{ route('password.request') }}" style="color:#2e63be">Forgot Password?</a>
+                            </div>
+                            <button class="btn mt-4 w-100">
+                                <span class="link-effect text-uppercase">
+                                    <span class="effect-1">Sign in</span>
+                                    <span class="effect-1">Sign in</span>
+                                </span>
+                            </button>
+                        </form>
+                        <p class="dont_account mb-40">Don't have an account? <a href="{{ route('register') }}">Sign Up for free</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+</div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+<!--==============================
+Marquee Area
+==============================-->
+<div class="container-fluid p-0 overflow-hidden">
+    <div class="slider__marquee clearfix marquee-wrap">
+        <div class="marquee_mode marquee__group">
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
         </div>
+    </div>
+</div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+@include('front.layouts.footer_1')
+@endsection

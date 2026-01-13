@@ -1,4 +1,4 @@
-<header class="nav-header header-{{ Request::is('/') || Request::is('home-3') ? 'layout1' : 'layout2' }}">
+<header class="nav-header header-{{ Request::is('home-2') || Request::is('home-4') || Request::is('home-5') ? 'layout2' : 'layout1' }}">
     <div class="sticky-wrapper">
         <!-- Main Menu Area -->
         <div class="menu-area">
@@ -7,7 +7,7 @@
                     <div class="col-auto">
                         <div class="header-logo">
                             @php
-                                $logo = (Request::is('/') || Request::is('home-3')) ? 'logo.svg' : 'logo-white-sm.svg';
+                                $logo = (Request::is('home-2') || Request::is('home-4') || Request::is('home-5')) ? 'logo-white-sm.svg' : 'logo.svg';
                             @endphp
                             <a href="{{ url('/') }}"><img src="{{ asset('dist/front/img/'.$logo) }}" alt="logo"></a>
                         </div>
@@ -98,7 +98,7 @@
                                     <span class="effect-1">CART <span>(02)</span></span>
                                 </span>
                             </button>
-                            <a href="login.html" class="btn">
+                            <a href="{{ route('login') }}" class="btn">
                                 <span class="link-effect">
                                     <span class="effect-1">LOG IN</span>
                                     <span class="effect-1">LOG IN</span>

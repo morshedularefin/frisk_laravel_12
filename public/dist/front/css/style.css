@@ -12914,3 +12914,66 @@ blockquote p {
     width: 70px;
     display: inline-block;
 }
+/* ===== iziToast Opacity Fix ===== */
+.iziToast-wrapper {
+    opacity: 1 !important;
+}
+
+.iziToast-wrapper .iziToast {
+    opacity: 1 !important;
+    background: rgba(238, 238, 238, 1) !important;
+}
+
+.iziToast-wrapper .iziToast > div {
+    opacity: 1 !important;
+}
+
+.iziToast-wrapper .iziToast .iziToast-body {
+    opacity: 1 !important;
+}
+
+.iziToast-wrapper .iziToast .iziToast-body .iziToast-texts {
+    opacity: 1 !important;
+}
+
+.iziToast-wrapper .iziToast .iziToast-body .iziToast-message {
+    opacity: 1 !important;
+    color: rgba(0, 0, 0, 1) !important;
+}
+
+.iziToast-wrapper .iziToast .iziToast-body .iziToast-title {
+    opacity: 1 !important;
+    color: rgba(0, 0, 0, 1) !important;
+}
+
+.iziToast-wrapper .iziToast .iziToast-body .iziToast-icon {
+    opacity: 1 !important;
+}
+
+.iziToast-capsule {
+    opacity: 1 !important;
+}
+
+.iziToast-overlay {
+    opacity: 1 !important;
+}
+
+.iziToast.iziToast-color-red {
+    background: rgba(255, 175, 180, 1) !important;
+}
+
+.iziToast.iziToast-color-orange {
+    background: rgba(255, 207, 165, 1) !important;
+}
+
+.iziToast.iziToast-color-yellow {
+    background: rgba(255, 249, 178, 1) !important;
+}
+
+.iziToast.iziToast-color-blue {
+    background: rgba(157, 222, 255, 1) !important;
+}
+
+.iziToast.iziToast-color-green {
+    background: rgba(166, 239, 184, 1) !important;
+}
