@@ -40,7 +40,7 @@
                                     <ul class="sub-menu">
                                         <li><a href="about.html">About Page</a></li>
                                         <li><a href="service.html">Service Page</a></li>
-                                        <li><a href="team.html">Team Page</a></li>
+                                        <li><a href="{{ route('team_members') }}">Team Members</a></li>
                                         <li><a href="pricing.html">Pricing Page</a></li>
                                         <li><a href="cart.html">Cart Page</a></li>
                                         <li><a href="checkout.html">Checkout Page</a></li>
