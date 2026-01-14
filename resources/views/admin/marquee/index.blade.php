@@ -9,7 +9,7 @@
 <div class="main-content">
     <section class="section">
         <div class="section-header justify-content-between">
-            <h1>Testimonials</h1>
+            <h1>Marquees</h1>
             <div class="ml-auto">
                 <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal_add"><i class="fas fa-plus"></i> Add New</a>
             </div>
@@ -22,19 +22,11 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="{{ route('admin.testimonial.store') }}" method="post">
+                            <form action="{{ route('admin.marquee.store') }}" method="post">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="">Name *</label>
-                                    <input type="text" class="form-control" name="name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="">Designation *</label>
-                                    <input type="text" class="form-control" name="designation">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="">Comment *</label>
-                                    <textarea class="form-control h_200" name="comment"></textarea>
+                                    <label for="">Text *</label>
+                                    <input type="text" class="form-control" name="text">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
@@ -54,24 +46,20 @@
                                     <thead>
                                         <tr>
                                             <th>SL</th>
-                                            <th>Name</th>
-                                            <th>Designation</th>
-                                            <th>Comment</th>
-                                            <th class="w_100">Action</th>
+                                            <th>Text</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($testimonials as $testimonial)
+                                        @foreach($marquees as $marquee)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $testimonial->name }}</td>
-                                            <td>{{ $testimonial->designation }}</td>
-                                            <td>{!! nl2br($testimonial->comment) !!}</td>
+                                            <td>{{ $marquee->text }}</td>
                                             <td class="pt_10 pb_10">
-                                                <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modal_edit_{{ $testimonial->id }}"><i class="fas fa-edit"></i></a>
-                                                <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal_delete_{{ $testimonial->id }}"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modal_edit_{{ $marquee->id }}"><i class="fas fa-edit"></i></a>
+                                                <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal_delete_{{ $marquee->id }}"><i class="fas fa-trash"></i></a>
                                             </td>
-                                            <div class="modal fade" id="modal_edit_{{ $testimonial->id }}" tabindex="-1" aria-hidden="true">
+                                            <div class="modal fade" id="modal_edit_{{ $marquee->id }}" tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -79,19 +67,11 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{ route('admin.testimonial.update', $testimonial->id) }}" method="post">
+                                                            <form action="{{ route('admin.marquee.update', $marquee->id) }}" method="post">
                                                             @csrf
                                                             <div class="mb-3">
-                                                                <label for="">Name *</label>
-                                                                <input type="text" class="form-control" name="name" value="{{ $testimonial->name }}">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="">Designation *</label>
-                                                                <input type="text" class="form-control" name="designation" value="{{ $testimonial->designation }}">
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="">Comment *</label>
-                                                                <textarea class="form-control h_200" name="comment">{{ $testimonial->comment }}</textarea>
+                                                                <label for="">Text *</label>
+                                                                <input type="text" class="form-control" name="text" value="{{ $marquee->text }}">
                                                             </div>
                                                             <button type="submit" class="btn btn-primary">Update</button>
                                                         </form>
@@ -100,7 +80,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="modal fade" id="modal_delete_{{ $testimonial->id }}" tabindex="-1" aria-hidden="true">
+                                            <div class="modal fade" id="modal_delete_{{ $marquee->id }}" tabindex="-1" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -108,7 +88,7 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{ route('admin.testimonial.destroy', $testimonial->id) }}" method="post">
+                                                            <form action="{{ route('admin.marquee.destroy', $marquee->id) }}" method="post">
                                                             @csrf
                                                             <div class="mb-3">
                                                                 <label for="">Do you want to delete this item?</label>

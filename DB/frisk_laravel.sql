@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2026 at 04:12 AM
+-- Generation Time: Jan 14, 2026 at 06:19 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -146,6 +146,29 @@ CREATE TABLE `job_batches` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `marquees`
+--
+
+CREATE TABLE `marquees` (
+  `id` bigint UNSIGNED NOT NULL,
+  `text` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `marquees`
+--
+
+INSERT INTO `marquees` (`id`, `text`, `created_at`, `updated_at`) VALUES
+(1, 'Crafting Your Vision', '2026-01-14 00:16:51', '2026-01-14 00:16:51'),
+(2, 'Building Your Future', '2026-01-14 00:17:03', '2026-01-14 00:17:03'),
+(3, 'Defining Your Success', '2026-01-14 00:17:14', '2026-01-14 00:17:14'),
+(4, 'Scaling Your Growth', '2026-01-14 00:17:24', '2026-01-14 00:17:24');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -165,7 +188,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '0001_01_01_000002_create_jobs_table', 1),
 (4, '2026_01_04_044511_create_admins_table', 2),
 (5, '2026_01_13_111526_add_extra_fields_to_users_table', 3),
-(6, '2026_01_14_014953_create_testimonials_table', 4);
+(6, '2026_01_14_014953_create_testimonials_table', 4),
+(7, '2026_01_14_061039_create_marquees_table', 5);
 
 -- --------------------------------------------------------
 
@@ -199,7 +223,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('klExdpLz2c2S81rLcakOWzozqIW5bbdIaXU1ZgWS', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiY29TVFE3VjZJalhKSW0yQ2Nkb0dyTmMzVkFPZDR2ZEl6T29qU0tMaiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9ob21lLTUiO3M6NToicm91dGUiO3M6NjoiaG9tZV81Ijt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1768363857);
+('klExdpLz2c2S81rLcakOWzozqIW5bbdIaXU1ZgWS', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiY29TVFE3VjZJalhKSW0yQ2Nkb0dyTmMzVkFPZDR2ZEl6T29qU0tMaiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9tYXJxdWVlL2luZGV4IjtzOjU6InJvdXRlIjtzOjE5OiJhZG1pbi5tYXJxdWVlLmluZGV4Ijt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1768371556);
 
 -- --------------------------------------------------------
 
@@ -303,6 +327,12 @@ ALTER TABLE `job_batches`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `marquees`
+--
+ALTER TABLE `marquees`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -358,10 +388,16 @@ ALTER TABLE `jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `marquees`
+--
+ALTER TABLE `marquees`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `testimonials`

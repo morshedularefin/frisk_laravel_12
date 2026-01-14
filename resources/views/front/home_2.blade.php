@@ -54,10 +54,10 @@ Marquee Area
 <div class="container-fluid p-0 overflow-hidden">
     <div class="slider__marquee clearfix marquee-wrap">
         <div class="marquee_mode marquee__group">
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled Flexibility</a></h6>
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> Crafting Your Vision</a></h6>
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> Building Your Future</a></h6>
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> Defining Your Success</a></h6>
+            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> Scaling Your Growth</a></h6>
         </div>
     </div>
 </div>

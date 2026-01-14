@@ -11,9 +11,11 @@
 
             <li class="{{ Route::is('admin.dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
 
-            <li class="{{ Route::is('admin.testimonial.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.testimonial.index') }}"><i class="fas fa-cog"></i> <span>Testimonial</span></a></li>
+            <li class="{{ Route::is('admin.testimonial.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.testimonial.index') }}"><i class="fas fa-quote-left"></i> <span>Testimonial</span></a></li>
 
-            <li class="nav-item dropdown active">
+            <li class="{{ Route::is('admin.marquee.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.marquee.index') }}"><i class="fas fa-scroll"></i> <span>Marquee</span></a></li>
+
+            {{-- <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-vector-square"></i><span>Dropdown Items</span></a>
                 <ul class="dropdown-menu">
                     <li class="active"><a class="nav-link" href=""><i class="fas fa-angle-right"></i> Item 1</a></li>
@@ -27,7 +29,7 @@
 
             <li class=""><a class="nav-link" href=""><i class="fas fa-border-all"></i> <span>Table</span></a></li>
 
-            <li class=""><a class="nav-link" href=""><i class="fas fa-receipt"></i> <span>Invoice</span></a></li>
+            <li class=""><a class="nav-link" href=""><i class="fas fa-receipt"></i> <span>Invoice</span></a></li> --}}
 
         </ul>
     </aside>
