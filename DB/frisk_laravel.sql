@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 14, 2026 at 06:19 AM
+-- Generation Time: Jan 14, 2026 at 06:34 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -152,6 +152,7 @@ CREATE TABLE `job_batches` (
 CREATE TABLE `marquees` (
   `id` bigint UNSIGNED NOT NULL,
   `text` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -160,11 +161,11 @@ CREATE TABLE `marquees` (
 -- Dumping data for table `marquees`
 --
 
-INSERT INTO `marquees` (`id`, `text`, `created_at`, `updated_at`) VALUES
-(1, 'Crafting Your Vision', '2026-01-14 00:16:51', '2026-01-14 00:16:51'),
-(2, 'Building Your Future', '2026-01-14 00:17:03', '2026-01-14 00:17:03'),
-(3, 'Defining Your Success', '2026-01-14 00:17:14', '2026-01-14 00:17:14'),
-(4, 'Scaling Your Growth', '2026-01-14 00:17:24', '2026-01-14 00:17:24');
+INSERT INTO `marquees` (`id`, `text`, `url`, `created_at`, `updated_at`) VALUES
+(1, 'Crafting Your Vision', NULL, '2026-01-14 00:16:51', '2026-01-14 00:30:29'),
+(2, 'Building Your Future', 'https://www.google.com/', '2026-01-14 00:17:03', '2026-01-14 00:28:40'),
+(3, 'Defining Your Success', 'https://www.google.com/', '2026-01-14 00:17:14', '2026-01-14 00:28:42'),
+(4, 'Scaling Your Growth', 'https://www.google.com/', '2026-01-14 00:17:24', '2026-01-14 00:28:45');
 
 -- --------------------------------------------------------
 
@@ -223,7 +224,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('klExdpLz2c2S81rLcakOWzozqIW5bbdIaXU1ZgWS', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiY29TVFE3VjZJalhKSW0yQ2Nkb0dyTmMzVkFPZDR2ZEl6T29qU0tMaiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9tYXJxdWVlL2luZGV4IjtzOjU6InJvdXRlIjtzOjE5OiJhZG1pbi5tYXJxdWVlLmluZGV4Ijt9czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1768371556);
+('klExdpLz2c2S81rLcakOWzozqIW5bbdIaXU1ZgWS', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiY29TVFE3VjZJalhKSW0yQ2Nkb0dyTmMzVkFPZDR2ZEl6T29qU0tMaiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJuZXciO2E6MDp7fXM6Mzoib2xkIjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9yZWdpc3RlciI7czo1OiJyb3V0ZSI7czo4OiJyZWdpc3RlciI7fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1768372425);
 
 -- --------------------------------------------------------
 
@@ -391,7 +392,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `marquees`
 --
 ALTER TABLE `marquees`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`

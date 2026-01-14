@@ -28,6 +28,10 @@
                                     <label for="">Text *</label>
                                     <input type="text" class="form-control" name="text">
                                 </div>
+                                <div class="mb-3">
+                                    <label for="">URL</label>
+                                    <input type="text" class="form-control" name="url">
+                                </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
@@ -47,6 +51,7 @@
                                         <tr>
                                             <th>SL</th>
                                             <th>Text</th>
+                                            <th>URL</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -55,6 +60,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $marquee->text }}</td>
+                                            <td>{{ $marquee->url }}</td>
                                             <td class="pt_10 pb_10">
                                                 <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modal_edit_{{ $marquee->id }}"><i class="fas fa-edit"></i></a>
                                                 <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal_delete_{{ $marquee->id }}"><i class="fas fa-trash"></i></a>
@@ -72,6 +78,10 @@
                                                             <div class="mb-3">
                                                                 <label for="">Text *</label>
                                                                 <input type="text" class="form-control" name="text" value="{{ $marquee->text }}">
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label for="">URL</label>
+                                                                <input type="text" class="form-control" name="url" value="{{ $marquee->url }}">
                                                             </div>
                                                             <button type="submit" class="btn btn-primary">Update</button>
                                                         </form>

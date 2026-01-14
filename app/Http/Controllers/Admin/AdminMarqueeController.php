@@ -18,10 +18,12 @@ class AdminMarqueeController extends Controller
     {
         $request->validate([
             'text' => 'required|string|max:255',
+            'url' => 'nullable|url',
         ]);
 
         $marquee = new Marquee();
         $marquee->text = $request->text;
+        $marquee->url = $request->url;
         $marquee->save();
         return redirect()->route('admin.marquee.index')->with('success', 'Marquee added successfully.');
     }
@@ -30,10 +32,12 @@ class AdminMarqueeController extends Controller
     {
         $request->validate([
             'text' => 'required|string|max:255',
+            'url' => 'nullable|url',
         ]);
 
         $marquee = Marquee::where('id', $id)->first();
         $marquee->text = $request->text;
+        $marquee->url = $request->url;
         $marquee->save();
         return redirect()->route('admin.marquee.index')->with('success', 'Marquee updated successfully.');
     }

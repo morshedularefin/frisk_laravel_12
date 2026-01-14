@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('marquees', function (Blueprint $table) {
             $table->id();
             $table->string('text');
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }
