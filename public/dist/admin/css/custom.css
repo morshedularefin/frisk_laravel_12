@@ -167,6 +167,10 @@ table tr td {
 .main-sidebar .sidebar-menu li.active a {
     border-left: 4px solid #6777ef;
 }
+.main-sidebar .sidebar-menu li.active a i,
+.main-sidebar .sidebar-menu li.active a span {
+    color: #6777ef!important;
+}
 
 .sub-sidebar {
     font-size: var(--font-size-common);
@@ -260,8 +264,9 @@ thead tr th {
 .form-group > label {
     margin-bottom: 3px;
 }
-.form-label {
-    color: #000;
+.form-label,
+label {
+    color: #424242;
     font-weight: 600;
     font-size: var(--font-size-common)!important;
 }

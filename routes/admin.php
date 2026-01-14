@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminProfileController;
+use App\Http\Controllers\Admin\AdminTestimonialController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -55,4 +56,6 @@ Route::middleware(['auth:admin', 'verified'])
     Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
     Route::get('profile', [AdminProfileController::class, 'index'])->name('profile');
     Route::post('profile', [AdminProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('testimonial/index', [AdminTestimonialController::class, 'index'])->name('testimonial.index');
+    Route::post('testimonial/store', [AdminTestimonialController::class, 'store'])->name('testimonial.store');
 });
