@@ -264,50 +264,19 @@ Team Area
     </div>
     <div class="container">
         <div class="row gy-4 justify-content-center">
+            @foreach($team_members as $team_member)
             <div class="col-lg-3 col-md-6">
                 <div class="team-card">
                     <div class="team-card_img">
-                        <img src="{{ asset('dist/front/img/team/team-1-1.png') }}" alt="Team Image">
+                        <img src="{{ asset('uploads/'.$team_member->photo) }}" alt="Team Image">
                     </div>
                     <div class="team-card_content">
-                        <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                        <span class="team-card_desig">Web Developer</span>
+                        <h3 class="team-card_title"><a href="{{ route('team_member',$team_member->slug) }}">{{ $team_member->name }}</a></h3>
+                        <span class="team-card_desig">{{ $team_member->position }}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-card">
-                    <div class="team-card_img">
-                        <img src="{{ asset('dist/front/img/team/team-1-2.png') }}" alt="Team Image">
-                    </div>
-                    <div class="team-card_content">
-                        <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                        <span class="team-card_desig">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-card">
-                    <div class="team-card_img">
-                        <img src="{{ asset('dist/front/img/team/team-1-3.png') }}" alt="Team Image">
-                    </div>
-                    <div class="team-card_content">
-                        <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                        <span class="team-card_desig">Web Developer</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="team-card">
-                    <div class="team-card_img">
-                        <img src="{{ asset('dist/front/img/team/team-1-4.png') }}" alt="Team Image">
-                    </div>
-                    <div class="team-card_content">
-                        <h3 class="team-card_title"><a href="team-details.html">Daniyel Karlos</a></h3>
-                        <span class="team-card_desig">Web Developer</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

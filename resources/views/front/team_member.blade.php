@@ -71,6 +71,7 @@
 </div>
 
 
+@if($team_member->email != '')
 <div class="contact-area-2 text-center space-bottom">
     <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -114,6 +115,7 @@
         </div>
     </div>
 </div>
+@endif
 
 @include('front.layouts.marquee')
 

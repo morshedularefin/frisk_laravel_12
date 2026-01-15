@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Front\TeamMemberController;
+use App\Http\Controllers\Front\AboutController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -16,6 +17,8 @@ Route::get('/home-2', [HomeController::class, 'home_2'])->name('home_2');
 Route::get('/home-3', [HomeController::class, 'home_3'])->name('home_3');
 Route::get('/home-4', [HomeController::class, 'home_4'])->name('home_4');
 Route::get('/home-5', [HomeController::class, 'home_5'])->name('home_5');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/team-members', [TeamMemberController::class, 'team_members'])->name('team_members');
 Route::get('/team-member/{slug}', [TeamMemberController::class, 'team_member'])->name('team_member');

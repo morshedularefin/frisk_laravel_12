@@ -5,13 +5,15 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Testimonial;
+use App\Models\TeamMember;
 
 class HomeController extends Controller
 {
     public function home_1()
     {
         $testimonials = Testimonial::get();
-        return view('front.home_1', compact('testimonials'));
+        $team_members = TeamMember::get()->take(4);
+        return view('front.home_1', compact('testimonials', 'team_members'));
     }
 
     public function home_2()
