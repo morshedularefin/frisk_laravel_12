@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminMarqueeController;
 use App\Http\Controllers\Admin\AdminTeamMemberController;
 use App\Http\Controllers\Admin\AdminPricingController;
 use App\Http\Controllers\Admin\AdminFaqController;
+use App\Http\Controllers\Admin\AdminClientController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -89,4 +90,9 @@ Route::middleware(['auth:admin', 'verified'])
     Route::post('faq/store', [AdminFaqController::class, 'store'])->name('faq.store');
     Route::post('faq/update/{id}', [AdminFaqController::class, 'update'])->name('faq.update');
     Route::post('faq/destroy/{id}', [AdminFaqController::class, 'destroy'])->name('faq.destroy');
+
+    Route::get('client/index', [AdminClientController::class, 'index'])->name('client.index');
+    Route::post('client/store', [AdminClientController::class, 'store'])->name('client.store');
+    Route::post('client/update/{id}', [AdminClientController::class, 'update'])->name('client.update');
+    Route::post('client/destroy/{id}', [AdminClientController::class, 'destroy'])->name('client.destroy');
 });

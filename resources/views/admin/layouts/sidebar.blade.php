@@ -21,6 +21,8 @@
 
             <li class="{{ Route::is('admin.faq.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.faq.index') }}"><i class="fas fa-question-circle"></i> <span>FAQ</span></a></li>
 
+            <li class="{{ Route::is('admin.client.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.client.index') }}"><i class="fas fa-user-graduate"></i> <span>Client</span></a></li>
+
             {{-- <li class="nav-item dropdown active">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-vector-square"></i><span>Dropdown Items</span></a>
                 <ul class="dropdown-menu">
