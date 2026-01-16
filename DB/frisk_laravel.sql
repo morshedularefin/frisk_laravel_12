@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2026 at 05:09 AM
+-- Generation Time: Jan 16, 2026 at 05:49 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -111,6 +111,43 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `faqs`
+--
+
+CREATE TABLE `faqs` (
+  `id` bigint UNSIGNED NOT NULL,
+  `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `item_order` int NOT NULL DEFAULT '0',
+  `faq_page` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Yes',
+  `home_page_1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Yes',
+  `home_page_5` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Yes',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `faqs`
+--
+
+INSERT INTO `faqs` (`id`, `question`, `answer`, `item_order`, `faq_page`, `home_page_1`, `home_page_5`, `created_at`, `updated_at`) VALUES
+(1, 'Who owns the website and code once the project is finished?', 'Upon final payment and project completion, you retain 100% ownership of the website, including all source code, design assets, and database structures created during the project.', 1, 'Yes', 'No', 'No', '2026-01-15 23:40:26', '2026-01-15 23:44:04'),
+(2, 'Do you provide a Non-Disclosure Agreement (NDA)?', 'We prioritize the security of your business ideas and are happy to sign a formal NDA before discussing any sensitive project details to ensure your intellectual property is protected.', 2, 'Yes', 'No', 'No', '2026-01-15 23:41:51', '2026-01-15 23:44:08'),
+(3, 'What is your typical design and development process?', 'Our process begins with a discovery phase to define goals, followed by wireframing, UI/UX design, client feedback loops, and finally, the technical development and testing of the approved designs.', 3, 'Yes', 'No', 'No', '2026-01-15 23:44:29', '2026-01-15 23:44:29'),
+(4, 'Can you integrate third-party APIs and services?', 'We have extensive experience integrating various third-party services, including payment gateways like Stripe, CRM systems, and social media APIs, to extend the functionality of your application.', 4, 'Yes', 'No', 'No', '2026-01-15 23:44:49', '2026-01-15 23:44:49'),
+(5, 'How do you handle website migrations from other platforms?', 'We manage the entire migration process by ensuring that all data, SEO equity, and files are safely transferred to the new environment with minimal downtime for your business operations.', 5, 'Yes', 'No', 'No', '2026-01-15 23:45:09', '2026-01-15 23:45:09'),
+(6, 'Do you provide training on how to manage the website?', 'Once the project is live, we provide a personalized training session or video walkthrough to ensure you and your team are comfortable managing content and updating your new digital platform.', 6, 'Yes', 'Yes', 'Yes', '2026-01-15 23:45:33', '2026-01-15 23:45:33'),
+(7, 'What happens if I need changes after the site is live?', 'We offer a dedicated warranty period for bug fixes post-launch, and any additional feature requests can be handled through a separate small-task agreement or an ongoing maintenance plan.', 7, 'Yes', 'Yes', 'Yes', '2026-01-15 23:45:52', '2026-01-15 23:45:52'),
+(8, 'What core services does your digital agency provide?', 'We offer a full suite of digital solutions, including custom web development specializing in Laravel, mobile app creation, UI/UX design, and strategic digital marketing to help brands scale.', 8, 'No', 'Yes', 'No', '2026-01-15 23:46:27', '2026-01-15 23:46:27'),
+(9, 'How long does it typically take to complete a project?', 'While timelines vary based on complexity, a standard professional website project usually takes between 4 to 8 weeks from the initial discovery phase to the final launch.', 9, 'No', 'Yes', 'No', '2026-01-15 23:46:48', '2026-01-15 23:46:48'),
+(10, 'Are your websites mobile-friendly and responsive?', 'Yes, every website we develop is built with a responsive design approach, ensuring that your site looks and functions perfectly across all devices, including desktops, tablets, and smartphones.', 10, 'No', 'Yes', 'No', '2026-01-15 23:47:10', '2026-01-15 23:47:10'),
+(11, 'Do you offer ongoing maintenance and support?', 'Yes, we provide post-launch support packages that include security updates, performance monitoring, and regular backups to ensure your digital assets remain healthy and functional.', 11, 'No', 'No', 'Yes', '2026-01-15 23:47:42', '2026-01-15 23:47:42'),
+(12, 'How do you ensure the security of my website?', 'We implement industry-standard security protocols, including SSL certificates, data encryption, and secure coding practices within the Laravel framework to protect your site against vulnerabilities.', 12, 'No', 'No', 'Yes', '2026-01-15 23:48:08', '2026-01-15 23:48:08'),
+(13, 'Can you help me update an existing website?', 'Absolutely, we can perform comprehensive audits of your current site to implement modern design updates, fix technical bugs, or migrate your system to a more powerful framework.', 13, 'No', 'No', 'Yes', '2026-01-15 23:48:28', '2026-01-15 23:48:28');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jobs`
 --
 
@@ -193,7 +230,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2026_01_14_061039_create_marquees_table', 5),
 (8, '2026_01_14_123122_create_team_members_table', 6),
 (9, '2026_01_16_025630_create_packages_table', 7),
-(10, '2026_01_16_043546_create_package_features_table', 8);
+(10, '2026_01_16_043546_create_package_features_table', 8),
+(11, '2026_01_16_052700_create_faqs_table', 9);
 
 -- --------------------------------------------------------
 
@@ -295,7 +333,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('CC3AdiCLimKy6G9mfSQpC2tSGjkCTLCyPeUBvr1m', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiTHljS2JWVXR5bTBwRkNFWHN5ZE5DTGJiM3dKbFFiVm5xdFU5czFyYyI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI5OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvcHJpY2luZyI7czo1OiJyb3V0ZSI7czo3OiJwcmljaW5nIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1768540167);
+('CC3AdiCLimKy6G9mfSQpC2tSGjkCTLCyPeUBvr1m', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiTHljS2JWVXR5bTBwRkNFWHN5ZE5DTGJiM3dKbFFiVm5xdFU5czFyYyI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjM3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vZmFxL2luZGV4IjtzOjU6InJvdXRlIjtzOjE1OiJhZG1pbi5mYXEuaW5kZXgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1768542555);
 
 -- --------------------------------------------------------
 
@@ -424,6 +462,12 @@ ALTER TABLE `failed_jobs`
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
+-- Indexes for table `faqs`
+--
+ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -511,6 +555,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `faqs`
+--
+ALTER TABLE `faqs`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -526,7 +576,7 @@ ALTER TABLE `marquees`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `packages`

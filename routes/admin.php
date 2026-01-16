@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Admin\AdminMarqueeController;
 use App\Http\Controllers\Admin\AdminTeamMemberController;
 use App\Http\Controllers\Admin\AdminPricingController;
+use App\Http\Controllers\Admin\AdminFaqController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -83,4 +84,9 @@ Route::middleware(['auth:admin', 'verified'])
     Route::post('pricing-plan/feature_store', [AdminPricingController::class, 'feature_store'])->name('pricing-plan.feature_store');
     Route::post('pricing-plan/feature_update/{id}', [AdminPricingController::class, 'feature_update'])->name('pricing-plan.feature_update');
     Route::post('pricing-plan/feature_destroy/{id}', [AdminPricingController::class, 'feature_destroy'])->name('pricing-plan.feature_destroy');
+
+    Route::get('faq/index', [AdminFaqController::class, 'index'])->name('faq.index');
+    Route::post('faq/store', [AdminFaqController::class, 'store'])->name('faq.store');
+    Route::post('faq/update/{id}', [AdminFaqController::class, 'update'])->name('faq.update');
+    Route::post('faq/destroy/{id}', [AdminFaqController::class, 'destroy'])->name('faq.destroy');
 });
