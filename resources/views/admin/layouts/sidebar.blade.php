@@ -11,7 +11,7 @@
 
             <li class="{{ Route::is('admin.dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
 
-            <li class="nav-item dropdown {{ Route::is('admin.testimonial.*') || Route::is('admin.marquee.*') || Route::is('admin.client.*') || Route::is('admin.award.*') || Route::is('admin.counter.*') ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ Route::is('admin.testimonial.*') || Route::is('admin.marquee.*') || Route::is('admin.client.*') || Route::is('admin.award.*') || Route::is('admin.counter.*') || Route::is('admin.skill.*') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-vector-square"></i><span>Modules</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Route::is('admin.testimonial.*') ? 'active' : '' }}">
@@ -28,6 +28,9 @@
                     </li>
                     <li class="{{ Route::is('admin.counter.*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.counter.index') }}"><i class="fas fa-angle-right"></i> Counter</a>
+                    </li>
+                    <li class="{{ Route::is('admin.skill.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.skill.index') }}"><i class="fas fa-angle-right"></i> Skill</a>
                     </li>
                 </ul>
             </li>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 17, 2026 at 06:41 AM
+-- Generation Time: Jan 17, 2026 at 11:09 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -322,7 +322,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2026_01_16_052700_create_faqs_table', 9),
 (12, '2026_01_16_062535_create_clients_table', 10),
 (13, '2026_01_17_045359_create_awards_table', 11),
-(14, '2026_01_17_060524_create_counters_table', 12);
+(14, '2026_01_17_060524_create_counters_table', 12),
+(15, '2026_01_17_105958_create_skills_table', 13);
 
 -- --------------------------------------------------------
 
@@ -424,7 +425,33 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('7JliwOcG8IfoTVDnHImTwLXodmkxMHkhnKJjtwc7', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRExtcmpxeXA5Mno4eU5tSzdMd2RjSkUyQlRFRHlLeXpVQlg2RjhGRSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vY291bnRlci9pbmRleCI7czo1OiJyb3V0ZSI7czoxOToiYWRtaW4uY291bnRlci5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1768632003);
+('7JliwOcG8IfoTVDnHImTwLXodmkxMHkhnKJjtwc7', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRExtcmpxeXA5Mno4eU5tSzdMd2RjSkUyQlRFRHlLeXpVQlg2RjhGRSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vY291bnRlci9pbmRleCI7czo1OiJyb3V0ZSI7czoxOToiYWRtaW4uY291bnRlci5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1768632003),
+('qDOm8fXNiUz2x5xiCLfKwNLeNIdKc276tUXu5CRa', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRGo2Q2M5T3FDTGNiUXFmTjV4QUZERnZycno1Wm51Z1BhalZPYVdDWCI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjM5OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vc2tpbGwvaW5kZXgiO3M6NToicm91dGUiO3M6MTc6ImFkbWluLnNraWxsLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1768648092);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `skills`
+--
+
+CREATE TABLE `skills` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `percentage` int NOT NULL,
+  `item_order` int NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `skills`
+--
+
+INSERT INTO `skills` (`id`, `name`, `percentage`, `item_order`, `created_at`, `updated_at`) VALUES
+(1, 'Branding', 84, 1, '2026-01-17 05:06:47', '2026-01-17 05:06:47'),
+(2, 'Development', 69, 2, '2026-01-17 05:07:20', '2026-01-17 05:07:20'),
+(3, 'ADVERTISING', 72, 3, '2026-01-17 05:07:31', '2026-01-17 05:07:31'),
+(4, 'Marketing', 94, 4, '2026-01-17 05:07:46', '2026-01-17 05:07:46');
 
 -- --------------------------------------------------------
 
@@ -628,6 +655,12 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
+-- Indexes for table `skills`
+--
+ALTER TABLE `skills`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `team_members`
 --
 ALTER TABLE `team_members`
@@ -703,7 +736,7 @@ ALTER TABLE `marquees`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `packages`
@@ -716,6 +749,12 @@ ALTER TABLE `packages`
 --
 ALTER TABLE `package_features`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `skills`
+--
+ALTER TABLE `skills`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `team_members`

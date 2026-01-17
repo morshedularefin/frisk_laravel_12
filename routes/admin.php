@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminClientController;
 use App\Http\Controllers\Admin\AdminAwardController;
 use App\Http\Controllers\Admin\AdminCounterController;
+use App\Http\Controllers\Admin\AdminSkillController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -105,4 +106,9 @@ Route::middleware(['auth:admin', 'verified'])
 
     Route::get('counter/index', [AdminCounterController::class, 'index'])->name('counter.index');
     Route::post('counter/update', [AdminCounterController::class, 'update'])->name('counter.update');
+
+    Route::get('skill/index', [AdminSkillController::class, 'index'])->name('skill.index');
+    Route::post('skill/store', [AdminSkillController::class, 'store'])->name('skill.store');
+    Route::post('skill/update/{id}', [AdminSkillController::class, 'update'])->name('skill.update');
+    Route::post('skill/destroy/{id}', [AdminSkillController::class, 'destroy'])->name('skill.destroy');
 });
