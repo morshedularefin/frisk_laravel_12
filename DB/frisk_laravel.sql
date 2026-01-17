@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 17, 2026 at 05:26 AM
+-- Generation Time: Jan 17, 2026 at 06:28 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -154,6 +154,34 @@ INSERT INTO `clients` (`id`, `photo`, `url`, `home_page_2`, `home_page_5`, `abou
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `counters`
+--
+
+CREATE TABLE `counters` (
+  `id` bigint UNSIGNED NOT NULL,
+  `number1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text1` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text2` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `number3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text3` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `counters`
+--
+
+INSERT INTO `counters` (`id`, `number1`, `title1`, `text1`, `number2`, `title2`, `text2`, `number3`, `title3`, `text3`, `created_at`, `updated_at`) VALUES
+(1, '26', 'Years of Experience', 'We are a creative agency brands building insightful strategy, creating unique designs helping.', '347', 'Successful Projects', 'We are a creative agency brands building insightful strategy, creating unique designs helping.', '139', 'Satisfied Customers', 'We are a creative agency brands building insightful strategy, creating unique designs helping.', NULL, '2026-01-17 00:20:40');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -293,7 +321,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2026_01_16_043546_create_package_features_table', 8),
 (11, '2026_01_16_052700_create_faqs_table', 9),
 (12, '2026_01_16_062535_create_clients_table', 10),
-(13, '2026_01_17_045359_create_awards_table', 11);
+(13, '2026_01_17_045359_create_awards_table', 11),
+(14, '2026_01_17_060524_create_counters_table', 12);
 
 -- --------------------------------------------------------
 
@@ -395,7 +424,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('7JliwOcG8IfoTVDnHImTwLXodmkxMHkhnKJjtwc7', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRExtcmpxeXA5Mno4eU5tSzdMd2RjSkUyQlRFRHlLeXpVQlg2RjhGRSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjI3OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWJvdXQiO3M6NToicm91dGUiO3M6NToiYWJvdXQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1768627511);
+('7JliwOcG8IfoTVDnHImTwLXodmkxMHkhnKJjtwc7', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRExtcmpxeXA5Mno4eU5tSzdMd2RjSkUyQlRFRHlLeXpVQlg2RjhGRSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vY291bnRlci9pbmRleCI7czo1OiJyb3V0ZSI7czoxOToiYWRtaW4uY291bnRlci5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1768631201);
 
 -- --------------------------------------------------------
 
@@ -529,6 +558,12 @@ ALTER TABLE `clients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `counters`
+--
+ALTER TABLE `counters`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -635,6 +670,12 @@ ALTER TABLE `clients`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `counters`
+--
+ALTER TABLE `counters`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -662,7 +703,7 @@ ALTER TABLE `marquees`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `packages`

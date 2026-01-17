@@ -11,35 +11,32 @@
 
             <li class="{{ Route::is('admin.dashboard') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
 
-            <li class="{{ Route::is('admin.testimonial.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.testimonial.index') }}"><i class="fas fa-quote-left"></i> <span>Testimonial</span></a></li>
-
-            <li class="{{ Route::is('admin.marquee.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.marquee.index') }}"><i class="fas fa-scroll"></i> <span>Marquee</span></a></li>
-
-            <li class="{{ Route::is('admin.team-member.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.team-member.index') }}"><i class="fas fa-users"></i> <span>Team Member</span></a></li>
-
-            <li class="{{ Route::is('admin.pricing-plan.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.pricing-plan.index') }}"><i class="fas fa-dollar-sign"></i> <span>Pricing Plan</span></a></li>
-
-            <li class="{{ Route::is('admin.faq.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.faq.index') }}"><i class="fas fa-question-circle"></i> <span>FAQ</span></a></li>
-
-            <li class="{{ Route::is('admin.client.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.client.index') }}"><i class="fas fa-user-graduate"></i> <span>Client</span></a></li>
-
-            <li class="{{ Route::is('admin.award.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.award.index') }}"><i class="fas fa-trophy"></i> <span>Award</span></a></li>
-
-            {{-- <li class="nav-item dropdown active">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-vector-square"></i><span>Dropdown Items</span></a>
+            <li class="nav-item dropdown {{ Route::is('admin.testimonial.*') || Route::is('admin.marquee.*') || Route::is('admin.client.*') || Route::is('admin.award.*') || Route::is('admin.counter.*') ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-vector-square"></i><span>Modules</span></a>
                 <ul class="dropdown-menu">
-                    <li class="active"><a class="nav-link" href=""><i class="fas fa-angle-right"></i> Item 1</a></li>
-                    <li class=""><a class="nav-link" href=""><i class="fas fa-angle-right"></i> Item 2</a></li>
+                    <li class="{{ Route::is('admin.testimonial.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.testimonial.index') }}""><i class="fas fa-angle-right"></i> Testimonial</a>
+                    </li>
+                    <li class="{{ Route::is('admin.marquee.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.marquee.index') }}"><i class="fas fa-angle-right"></i> Marquee</a>
+                    </li>
+                    <li class="{{ Route::is('admin.client.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.client.index') }}"><i class="fas fa-angle-right"></i> Client</a>
+                    </li>
+                    <li class="{{ Route::is('admin.award.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.award.index') }}"><i class="fas fa-angle-right"></i> Award</a>
+                    </li>
+                    <li class="{{ Route::is('admin.counter.*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.counter.index') }}"><i class="fas fa-angle-right"></i> Counter</a>
+                    </li>
                 </ul>
             </li>
 
-            <li class=""><a class="nav-link" href=""><i class="fas fa-cog"></i> <span>Setting</span></a></li>
+            <li class="{{ Route::is('admin.team-member.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.team-member.index') }}"><i class="fas fa-users"></i> <span>Team Page</span></a></li>
 
-            <li class=""><a class="nav-link" href=""><i class="fab fa-wpforms"></i> <span>Form</span></a></li>
+            <li class="{{ Route::is('admin.pricing-plan.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.pricing-plan.index') }}"><i class="fas fa-dollar-sign"></i> <span>Pricing Page</span></a></li>
 
-            <li class=""><a class="nav-link" href=""><i class="fas fa-border-all"></i> <span>Table</span></a></li>
-
-            <li class=""><a class="nav-link" href=""><i class="fas fa-receipt"></i> <span>Invoice</span></a></li> --}}
+            <li class="{{ Route::is('admin.faq.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.faq.index') }}"><i class="fas fa-question-circle"></i> <span>FAQ Page</span></a></li>
 
         </ul>
     </aside>
