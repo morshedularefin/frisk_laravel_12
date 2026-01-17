@@ -78,7 +78,7 @@
                                                 <a href="" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal_delete_{{ $award->id }}"><i class="fas fa-trash"></i></a>
                                             </td>
                 <div class="modal fade" id="modal_edit_{{ $award->id }}" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Edit Item</h5>

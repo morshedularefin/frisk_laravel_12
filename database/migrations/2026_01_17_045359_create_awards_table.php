@@ -17,7 +17,6 @@ return new class extends Migration
             $table->text('description');
             $table->string('year');
             $table->string('tag');
-            $table->integer('item_order')->default(0);
             $table->timestamps();
         });
     }

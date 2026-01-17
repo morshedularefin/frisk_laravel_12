@@ -10,7 +10,7 @@ class AdminAwardController extends Controller
 {
     public function index()
     {
-        $awards = Award::orderBy('item_order','asc')->get();
+        $awards = Award::get();
         return view('admin.award.index', compact('awards'));
     }
 
