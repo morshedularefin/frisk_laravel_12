@@ -64,16 +64,19 @@ Feature Area
             </div>
         </div>
         <div class="row gy-4 align-items-center justify-content-center">
+            @foreach($services as $service)
             <div class="col-xxl-5 col-md-6">
                 <div class="feature-card">
                     <div class="feature-card-icon">
-                        <img src="{{ asset('dist/front/img/icon/feature-icon1-1.svg') }}" alt="icon">
+                        <img src="{{ asset('uploads/' . $service->icon) }}" alt="icon">
                     </div>
                     <h4 class="feature-card-title">
-                        <a href="service.html">Branding Design</a>
+                        <a href="{{ route('service', $service->slug) }}">{{ $service->name }}</a>
                     </h4>
-                    <p class="feature-card-text">We care success relationships fuel real success We love building brands and helping</p>
-                    <a href="service-details.html" class="link-btn">
+                    <p class="feature-card-text">
+                        {!! nl2br($service->short_description) !!}
+                    </p>
+                    <a href="{{ route('service', $service->slug) }}" class="link-btn">
                         <span class="link-effect">
                             <span class="effect-1">VIEW DETAILS</span>
                             <span class="effect-1">VIEW DETAILS</span>
@@ -82,60 +85,7 @@ Feature Area
                     </a>
                 </div>
             </div>
-            <div class="col-xxl-5 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-card-icon">
-                        <img src="{{ asset('dist/front/img/icon/feature-icon1-2.svg') }}" alt="icon">
-                    </div>
-                    <h4 class="feature-card-title">
-                        <a href="service.html">Website Development</a>
-                    </h4>
-                    <p class="feature-card-text">We care success relationships fuel real success We love building brands and helping</p>
-                    <a href="service-details.html" class="link-btn">
-                        <span class="link-effect">
-                            <span class="effect-1">VIEW DETAILS</span>
-                            <span class="effect-1">VIEW DETAILS</span>
-                        </span>
-                        <img src="{{ asset('dist/front/img/icon/arrow-left-top.svg') }}" alt="icon">
-                    </a>
-                </div>
-            </div>
-            <div class="col-xxl-5 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-card-icon">
-                        <img src="{{ asset('dist/front/img/icon/feature-icon1-3.svg') }}" alt="icon">
-                    </div>
-                    <h4 class="feature-card-title">
-                        <a href="service.html">Illustration Modelling</a>
-                    </h4>
-                    <p class="feature-card-text">We care success relationships fuel real success We love building brands and helping</p>
-                    <a href="service-details.html" class="link-btn">
-                        <span class="link-effect">
-                            <span class="effect-1">VIEW DETAILS</span>
-                            <span class="effect-1">VIEW DETAILS</span>
-                        </span>
-                        <img src="{{ asset('dist/front/img/icon/arrow-left-top.svg') }}" alt="icon">
-                    </a>
-                </div>
-            </div>
-            <div class="col-xxl-5 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-card-icon">
-                        <img src="{{ asset('dist/front/img/icon/feature-icon1-4.svg') }}" alt="icon">
-                    </div>
-                    <h4 class="feature-card-title">
-                        <a href="service.html">Digital Marketing</a>
-                    </h4>
-                    <p class="feature-card-text">We care success relationships fuel real success We love building brands and helping</p>
-                    <a href="service-details.html" class="link-btn">
-                        <span class="link-effect">
-                            <span class="effect-1">VIEW DETAILS</span>
-                            <span class="effect-1">VIEW DETAILS</span>
-                        </span>
-                        <img src="{{ asset('dist/front/img/icon/arrow-left-top.svg') }}" alt="icon">
-                    </a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

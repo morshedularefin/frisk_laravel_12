@@ -66,17 +66,20 @@ Feature Area
             </div>
             <div class="col-xxl-6 col-xl-6">
                 <div class="feature-static-wrap">
+                    @foreach($services as $service)
                     <div class="feature-static">
                         <div class="feature-card style-grid">
                             <div class="feature-card-icon">
-                                <img src="{{ asset('dist/front/img/icon/feature-icon1-1.svg') }}" alt="icon">
+                                <img src="{{ asset('uploads/' . $service->icon) }}" alt="icon">
                             </div>
                             <div class="feature-card-details">
                                 <h4 class="feature-card-title">
-                                    <a href="service.html">Social Advertising</a>
+                                    <a href="{{ route('service', $service->slug) }}">{{ $service->name }}</a>
                                 </h4>
-                                <p class="feature-card-text">Good website tells a story that will make users fully immerse themselves operating</p>
-                                <a href="service-details.html" class="link-btn">
+                                <p class="feature-card-text">
+                                    {!! nl2br($service->short_description) !!}
+                                </p>
+                                <a href="{{ route('service', $service->slug) }}" class="link-btn">
                                     <span class="link-effect">
                                         <span class="effect-1">VIEW DETAILS</span>
                                         <span class="effect-1">VIEW DETAILS</span>
@@ -86,46 +89,7 @@ Feature Area
                             </div>
                         </div>
                     </div>
-                    <div class="feature-static">
-                        <div class="feature-card style-grid">
-                            <div class="feature-card-icon">
-                                <img src="{{ asset('dist/front/img/icon/feature-icon1-2.svg') }}" alt="icon">
-                            </div>
-                            <div class="feature-card-details">
-                                <h4 class="feature-card-title">
-                                    <a href="service.html">Illustration Modelling</a>
-                                </h4>
-                                <p class="feature-card-text">Good website tells a story that will make users fully immerse themselves operating</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">VIEW DETAILS</span>
-                                        <span class="effect-1">VIEW DETAILS</span>
-                                    </span>
-                                    <img src="{{ asset('dist/front/img/icon/arrow-left-top.svg') }}" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="feature-static">
-                        <div class="feature-card style-grid">
-                            <div class="feature-card-icon">
-                                <img src="{{ asset('dist/front/img/icon/feature-icon1-3.svg') }}" alt="icon">
-                            </div>
-                            <div class="feature-card-details">
-                                <h4 class="feature-card-title">
-                                    <a href="service.html">Website Development</a>
-                                </h4>
-                                <p class="feature-card-text">Good website tells a story that will make users fully immerse themselves operating</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">VIEW DETAILS</span>
-                                        <span class="effect-1">VIEW DETAILS</span>
-                                    </span>
-                                    <img src="{{ asset('dist/front/img/icon/arrow-left-top.svg') }}" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

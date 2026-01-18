@@ -9,6 +9,7 @@ use App\Http\Controllers\Front\TeamMemberController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\PricingController;
 use App\Http\Controllers\Front\FaqController;
+use App\Http\Controllers\Front\ServiceController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -27,6 +28,9 @@ Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 Route::get('/team-members', [TeamMemberController::class, 'team_members'])->name('team_members');
 Route::get('/team-member/{slug}', [TeamMemberController::class, 'team_member'])->name('team_member');
 Route::post('/team-member/send-email', [TeamMemberController::class, 'team_member_send_email'])->name('team_member_send_email');
+
+Route::get('/services', [ServiceController::class, 'services'])->name('services');
+Route::get('/service/{slug}', [ServiceController::class, 'service'])->name('service');
 
 // Route::get('/secret', [HomeController::class, 'secret'])->name('secret')->middleware(['auth','password.confirm']);
 
