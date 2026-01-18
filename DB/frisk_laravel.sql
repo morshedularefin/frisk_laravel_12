@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 17, 2026 at 01:26 PM
+-- Generation Time: Jan 18, 2026 at 02:07 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -323,7 +323,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2026_01_16_062535_create_clients_table', 10),
 (13, '2026_01_17_045359_create_awards_table', 11),
 (14, '2026_01_17_060524_create_counters_table', 12),
-(15, '2026_01_17_105958_create_skills_table', 13);
+(15, '2026_01_17_105958_create_skills_table', 13),
+(16, '2026_01_18_012328_create_services_table', 14);
 
 -- --------------------------------------------------------
 
@@ -408,6 +409,40 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint UNSIGNED NOT NULL,
+  `icon` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `photo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `item_order` int NOT NULL DEFAULT '0',
+  `home_page_2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `home_page_3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `home_page_5` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `icon`, `photo`, `name`, `slug`, `short_description`, `description`, `item_order`, `home_page_2`, `home_page_3`, `home_page_5`, `created_at`, `updated_at`) VALUES
+(1, 'service_icon_1768701261.svg', 'service_photo_1768701669.png', 'Branding Design', 'branding-design', 'We care success relationships fuel success we love building.', '<p>Lorem ipsum dolor sit amet, feugait lobortis ne cum. Tempor everti pri ex, nec periculis philosophia ne. Populo quodsi referrentur mea cu. Et sed sint mollis viderer, ex hinc veri percipit his. Eos ea agam posse ludus, est ei dicat luptatum contentiones, vix velit aeterno no. In qui summo nullam ceteros.</p>\r\n<p>Primis malorum an pri. Meliore nostrum ex nam, quando mediocrem id eam, vim te periculis delicatissimi. Sit no verear docendi denique, pri ad odio corpora apeirian. Ex has persius dolorem, vix clita contentiones at. Id albucius apeirian vis, sed id vero possit tacimates.</p>\r\n<p>Discere impedit ei has, his aperiri antiopam contentiones at. An errem laoreet vix, ei ridens prompta phaedrum pri. In harum delenit ocurreret sea. Nullam tacimates quo at, ea vim libris meliore. Nulla partiendo te vis, quo no aperiri fabellas. Animal alterum verterem usu ut, ei est agam insolens reprimique, et lorem regione ceteros sed.</p>\r\n<p>Vim no facilisi gloriatur. Et mel accommodare philosophia, eos ad doming tritani habemus. Id est graece tincidunt, ut nonumy aliquando vix, aperiri nusquam scriptorem eu has. Mel ex graece legendos, an audiam definitionem duo, natum eruditi sanctus no eos. Ut iudico graece his, his te latine vulputate, virtute equidem ut qui.</p>', 1, 'Yes', 'Yes', 'Yes', '2026-01-17 19:45:20', '2026-01-17 20:01:09'),
+(2, 'service_icon_1768700890.svg', 'service_photo_1768701675.png', 'Web Development', 'web-development', 'We care success relationships fuel success we love building.', '<p>Lorem ipsum dolor sit amet, feugait lobortis ne cum. Tempor everti pri ex, nec periculis philosophia ne. Populo quodsi referrentur mea cu. Et sed sint mollis viderer, ex hinc veri percipit his. Eos ea agam posse ludus, est ei dicat luptatum contentiones, vix velit aeterno no. In qui summo nullam ceteros.</p>\r\n<p>Primis malorum an pri. Meliore nostrum ex nam, quando mediocrem id eam, vim te periculis delicatissimi. Sit no verear docendi denique, pri ad odio corpora apeirian. Ex has persius dolorem, vix clita contentiones at. Id albucius apeirian vis, sed id vero possit tacimates.</p>\r\n<p>Discere impedit ei has, his aperiri antiopam contentiones at. An errem laoreet vix, ei ridens prompta phaedrum pri. In harum delenit ocurreret sea. Nullam tacimates quo at, ea vim libris meliore. Nulla partiendo te vis, quo no aperiri fabellas. Animal alterum verterem usu ut, ei est agam insolens reprimique, et lorem regione ceteros sed.</p>\r\n<p>Vim no facilisi gloriatur. Et mel accommodare philosophia, eos ad doming tritani habemus. Id est graece tincidunt, ut nonumy aliquando vix, aperiri nusquam scriptorem eu has. Mel ex graece legendos, an audiam definitionem duo, natum eruditi sanctus no eos. Ut iudico graece his, his te latine vulputate, virtute equidem ut qui.</p>', 2, 'Yes', 'Yes', 'Yes', '2026-01-17 19:48:10', '2026-01-17 20:01:15'),
+(3, 'service_icon_1768700946.svg', 'service_photo_1768701681.png', 'Digital Marketing', 'digital-marketing', 'We care success relationships fuel success we love building.', '<p>Lorem ipsum dolor sit amet, feugait lobortis ne cum. Tempor everti pri ex, nec periculis philosophia ne. Populo quodsi referrentur mea cu. Et sed sint mollis viderer, ex hinc veri percipit his. Eos ea agam posse ludus, est ei dicat luptatum contentiones, vix velit aeterno no. In qui summo nullam ceteros.</p>\r\n<p>Primis malorum an pri. Meliore nostrum ex nam, quando mediocrem id eam, vim te periculis delicatissimi. Sit no verear docendi denique, pri ad odio corpora apeirian. Ex has persius dolorem, vix clita contentiones at. Id albucius apeirian vis, sed id vero possit tacimates.</p>\r\n<p>Discere impedit ei has, his aperiri antiopam contentiones at. An errem laoreet vix, ei ridens prompta phaedrum pri. In harum delenit ocurreret sea. Nullam tacimates quo at, ea vim libris meliore. Nulla partiendo te vis, quo no aperiri fabellas. Animal alterum verterem usu ut, ei est agam insolens reprimique, et lorem regione ceteros sed.</p>\r\n<p>Vim no facilisi gloriatur. Et mel accommodare philosophia, eos ad doming tritani habemus. Id est graece tincidunt, ut nonumy aliquando vix, aperiri nusquam scriptorem eu has. Mel ex graece legendos, an audiam definitionem duo, natum eruditi sanctus no eos. Ut iudico graece his, his te latine vulputate, virtute equidem ut qui.</p>', 3, 'Yes', 'Yes', 'Yes', '2026-01-17 19:49:06', '2026-01-17 20:01:21'),
+(4, 'service_icon_1768701003.svg', 'service_photo_1768701687.png', 'Illustration Modelling', 'illustration-modelling', 'We care success relationships fuel success we love building.', '<p>Lorem ipsum dolor sit amet, feugait lobortis ne cum. Tempor everti pri ex, nec periculis philosophia ne. Populo quodsi referrentur mea cu. Et sed sint mollis viderer, ex hinc veri percipit his. Eos ea agam posse ludus, est ei dicat luptatum contentiones, vix velit aeterno no. In qui summo nullam ceteros.</p>\r\n<p>Primis malorum an pri. Meliore nostrum ex nam, quando mediocrem id eam, vim te periculis delicatissimi. Sit no verear docendi denique, pri ad odio corpora apeirian. Ex has persius dolorem, vix clita contentiones at. Id albucius apeirian vis, sed id vero possit tacimates.</p>\r\n<p>Discere impedit ei has, his aperiri antiopam contentiones at. An errem laoreet vix, ei ridens prompta phaedrum pri. In harum delenit ocurreret sea. Nullam tacimates quo at, ea vim libris meliore. Nulla partiendo te vis, quo no aperiri fabellas. Animal alterum verterem usu ut, ei est agam insolens reprimique, et lorem regione ceteros sed.</p>\r\n<p>Vim no facilisi gloriatur. Et mel accommodare philosophia, eos ad doming tritani habemus. Id est graece tincidunt, ut nonumy aliquando vix, aperiri nusquam scriptorem eu has. Mel ex graece legendos, an audiam definitionem duo, natum eruditi sanctus no eos. Ut iudico graece his, his te latine vulputate, virtute equidem ut qui.</p>', 4, 'Yes', 'No', 'Yes', '2026-01-17 19:50:03', '2026-01-17 20:02:03'),
+(5, 'service_icon_1768701035.svg', 'service_photo_1768701693.png', 'Content Marketing', 'content-marketing', 'We care success relationships fuel success we love building.', '<p>Lorem ipsum dolor sit amet, feugait lobortis ne cum. Tempor everti pri ex, nec periculis philosophia ne. Populo quodsi referrentur mea cu. Et sed sint mollis viderer, ex hinc veri percipit his. Eos ea agam posse ludus, est ei dicat luptatum contentiones, vix velit aeterno no. In qui summo nullam ceteros.</p>\r\n<p>Primis malorum an pri. Meliore nostrum ex nam, quando mediocrem id eam, vim te periculis delicatissimi. Sit no verear docendi denique, pri ad odio corpora apeirian. Ex has persius dolorem, vix clita contentiones at. Id albucius apeirian vis, sed id vero possit tacimates.</p>\r\n<p>Discere impedit ei has, his aperiri antiopam contentiones at. An errem laoreet vix, ei ridens prompta phaedrum pri. In harum delenit ocurreret sea. Nullam tacimates quo at, ea vim libris meliore. Nulla partiendo te vis, quo no aperiri fabellas. Animal alterum verterem usu ut, ei est agam insolens reprimique, et lorem regione ceteros sed.</p>\r\n<p>Vim no facilisi gloriatur. Et mel accommodare philosophia, eos ad doming tritani habemus. Id est graece tincidunt, ut nonumy aliquando vix, aperiri nusquam scriptorem eu has. Mel ex graece legendos, an audiam definitionem duo, natum eruditi sanctus no eos. Ut iudico graece his, his te latine vulputate, virtute equidem ut qui.</p>', 5, 'Yes', 'No', 'Yes', '2026-01-17 19:50:35', '2026-01-17 20:02:08'),
+(6, 'service_icon_1768701081.svg', 'service_photo_1768701700.png', 'Social Advertising', 'social-advertising', 'We care success relationships fuel success we love building.', '<p>Lorem ipsum dolor sit amet, feugait lobortis ne cum. Tempor everti pri ex, nec periculis philosophia ne. Populo quodsi referrentur mea cu. Et sed sint mollis viderer, ex hinc veri percipit his. Eos ea agam posse ludus, est ei dicat luptatum contentiones, vix velit aeterno no. In qui summo nullam ceteros.</p>\r\n<p>Primis malorum an pri. Meliore nostrum ex nam, quando mediocrem id eam, vim te periculis delicatissimi. Sit no verear docendi denique, pri ad odio corpora apeirian. Ex has persius dolorem, vix clita contentiones at. Id albucius apeirian vis, sed id vero possit tacimates.</p>\r\n<p>Discere impedit ei has, his aperiri antiopam contentiones at. An errem laoreet vix, ei ridens prompta phaedrum pri. In harum delenit ocurreret sea. Nullam tacimates quo at, ea vim libris meliore. Nulla partiendo te vis, quo no aperiri fabellas. Animal alterum verterem usu ut, ei est agam insolens reprimique, et lorem regione ceteros sed.</p>\r\n<p>Vim no facilisi gloriatur. Et mel accommodare philosophia, eos ad doming tritani habemus. Id est graece tincidunt, ut nonumy aliquando vix, aperiri nusquam scriptorem eu has. Mel ex graece legendos, an audiam definitionem duo, natum eruditi sanctus no eos. Ut iudico graece his, his te latine vulputate, virtute equidem ut qui.</p>', 6, 'Yes', 'No', 'Yes', '2026-01-17 19:51:21', '2026-01-17 20:02:12');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sessions`
 --
 
@@ -425,9 +460,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('7JliwOcG8IfoTVDnHImTwLXodmkxMHkhnKJjtwc7', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRExtcmpxeXA5Mno4eU5tSzdMd2RjSkUyQlRFRHlLeXpVQlg2RjhGRSI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vY291bnRlci9pbmRleCI7czo1OiJyb3V0ZSI7czoxOToiYWRtaW4uY291bnRlci5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1768632003),
-('fdyKzbWEeqCbBNp7Y9nbGPLJPwqCx454Djt8IB5D', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiQ1VIYkJBV0hiNXhzdmxaam11bWllRDhWRGhqWkpRamJVNGZibkpaZCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9ob21lLTUiO3M6NToicm91dGUiO3M6NjoiaG9tZV81Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1768656303),
-('qDOm8fXNiUz2x5xiCLfKwNLeNIdKc276tUXu5CRa', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRGo2Q2M5T3FDTGNiUXFmTjV4QUZERnZycno1Wm51Z1BhalZPYVdDWCI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjM5OiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vc2tpbGwvaW5kZXgiO3M6NToicm91dGUiO3M6MTc6ImFkbWluLnNraWxsLmluZGV4Ijt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MjoibG9naW5fYWRtaW5fNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1768648092);
+('PBUKOzWcSBrOR8KtCC5oOzlCpp7M14bjY0NmThkB', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRFVKZ0xZV1NsWDhQOVdWbEtpVmF6dkZ4MzZZdEN2cURId01PdFVCViI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQxOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vc2VydmljZS9pbmRleCI7czo1OiJyb3V0ZSI7czoxOToiYWRtaW4uc2VydmljZS5pbmRleCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NTI6ImxvZ2luX2FkbWluXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1768701929);
 
 -- --------------------------------------------------------
 
@@ -648,6 +681,13 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `services_slug_unique` (`slug`);
+
+--
 -- Indexes for table `sessions`
 --
 ALTER TABLE `sessions`
@@ -737,7 +777,7 @@ ALTER TABLE `marquees`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `packages`
@@ -750,6 +790,12 @@ ALTER TABLE `packages`
 --
 ALTER TABLE `package_features`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `skills`

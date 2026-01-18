@@ -41,6 +41,8 @@
 
             <li class="{{ Route::is('admin.faq.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.faq.index') }}"><i class="fas fa-question-circle"></i> <span>FAQ Page</span></a></li>
 
+            <li class="{{ Route::is('admin.service.*') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.service.index') }}"><i class="fas fa-cogs"></i> <span>Service Page</span></a></li>
+
         </ul>
     </aside>
 </div>

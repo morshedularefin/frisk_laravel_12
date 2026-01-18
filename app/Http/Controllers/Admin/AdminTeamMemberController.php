@@ -21,7 +21,7 @@ class AdminTeamMemberController extends Controller
             'slug' => 'required|alpha_dash|string|max:255|unique:team_members,slug',
             'position' => 'required|string|max:255',
             'biography' => 'required|string',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'photo' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $final_name = 'team_member_'.time().'.'.$request->photo->getClientOriginalExtension();
@@ -57,6 +57,9 @@ class AdminTeamMemberController extends Controller
         $team_member = TeamMember::where('id', $id)->first();
 
         if($request->hasFile('photo')) {
+            $request->validate([
+                'photo' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
             $final_name = 'team_member_'.time().'.'.$request->photo->getClientOriginalExtension();
             if($team_member->photo && file_exists(public_path('uploads/'.$team_member->photo))) {
                 unlink(public_path('uploads/'.$team_member->photo));
