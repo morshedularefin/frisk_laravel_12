@@ -8,6 +8,6 @@ class Portfolio extends Model
 {
     public function photos()
     {
-        return $this->hasMany(PortfolioPhoto::class)->orderBy('item_order', 'asc');
+        return $this->hasMany(PortfolioPhoto::class);
     }
 }

@@ -22,11 +22,13 @@
                     <img class="w-100" src="{{ asset('uploads/'.$portfolio->photo) }}" alt="img">
                 </div>
             </div>
+            @foreach($portfolio->photos as $photo)
             <div class="col-xl-12">
                 <div class="project-inner-thumb mb-80 wow img-custom-anim-top">
-                    <img class="w-100" src="{{ asset('dist/front/img/portfolio/portfolio_inner_2.png') }}" alt="img">
+                    <img class="w-100" src="{{ asset('uploads/'.$photo->photo) }}" alt="img">
                 </div>
             </div>
+            @endforeach
         </div>
         <div class="row justify-content-between flex-row-reverse">
             <div class="col-xl-3 col-lg-4">
@@ -66,13 +68,13 @@
             </div>
             <div class="col-lg-12">
                 <div class="inner__page-nav space-top mt-n1 mb-n1">
-                    <a href="#" class="nav-btn">
+                    <a href="{{ $previous_portfolio ? route('portfolio', $previous_portfolio->slug) : 'javascript:void(0)'}}" class="nav-btn">
                         <i class="fa fa-arrow-left"></i> <span><span class="link-effect">
                             <span class="effect-1">Previous Project</span>
                             <span class="effect-1">Previous Project</span>
                         </span></span>
                     </a>
-                    <a href="#" class="nav-btn"><span><span class="link-effect">
+                    <a href="{{ $next_portfolio ? route('portfolio', $next_portfolio->slug) : 'javascript:void(0)'}}" class="nav-btn"><span><span class="link-effect">
                         <span class="effect-1">Next Project</span>
                         <span class="effect-1">Next Project</span>
                     </span></span>
