@@ -85,6 +85,15 @@ class AdminPortfolioController extends Controller
 
     public function destroy(Request $request, $id)
     {
+
+        $all_portfolio_photos = PortfolioPhoto::where('portfolio_id', $id)->get();
+        foreach($all_portfolio_photos as $portfolio_photo) {
+            if($portfolio_photo->photo && file_exists(public_path('uploads/'.$portfolio_photo->photo))) {
+                unlink(public_path('uploads/'.$portfolio_photo->photo));
+            }
+            $portfolio_photo->delete();
+        }
+
         $portfolio = Portfolio::where('id', $id)->first();
 
         if($portfolio->photo && file_exists(public_path('uploads/'.$portfolio->photo))) {
@@ -99,7 +108,7 @@ class AdminPortfolioController extends Controller
     public function photos($id)
     {
         $portfolio = Portfolio::where('id', $id)->first();
-        $portfolio_photos = PortfolioPhoto::orderBy('item_order','asc')->where('portfolio_id', $id)->get();
+        $portfolio_photos = PortfolioPhoto::orderBy('id','asc')->where('portfolio_id', $id)->get();
         return view('admin.portfolio.photo', compact('portfolio', 'portfolio_photos'));
     }
 

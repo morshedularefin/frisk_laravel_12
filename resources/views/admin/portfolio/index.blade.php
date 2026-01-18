@@ -107,7 +107,7 @@
                                             <td>{{ $portfolio->category }}</td>
                                             <td>{{ $portfolio->item_order }}</td>
                                             <td>
-                                                <a href="{{ route('admin.portfolio.photos', $portfolio->id) }}">Photo Gallery</a>
+                                                <a href="{{ route('admin.portfolio.photos', $portfolio->id) }}" class="btn btn-primary btn-sm">Photo Gallery</a>
                                             </td>
                                             <td class="pt_10 pb_10">
                                                 <a href="" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modal_edit_{{ $portfolio->id }}"><i class="fas fa-edit"></i></a>
@@ -128,7 +128,7 @@
                                         <div class="col-lg-12 mb-3">
                                             <label for="">Existing Photo</label>
                                             <div>
-                                                <img src="{{ asset('uploads/'.$portfolio->photo) }}" alt="" class="w_100">
+                                                <img src="{{ asset('uploads/'.$portfolio->photo) }}" alt="" class="w_150">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mb-3">

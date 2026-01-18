@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2026 at 07:54 AM
+-- Generation Time: Jan 18, 2026 at 08:51 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -457,6 +457,24 @@ CREATE TABLE `portfolio_photos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `portfolio_photos`
+--
+
+INSERT INTO `portfolio_photos` (`id`, `portfolio_id`, `photo`, `created_at`, `updated_at`) VALUES
+(1, 3, 'portfolio_photo_1768725447.png', '2026-01-18 02:37:27', '2026-01-18 02:37:27'),
+(2, 3, 'portfolio_photo_1768725453.png', '2026-01-18 02:37:33', '2026-01-18 02:37:33'),
+(4, 5, 'portfolio_photo_1768725648.png', '2026-01-18 02:40:48', '2026-01-18 02:40:48'),
+(5, 5, 'portfolio_photo_1768725656.png', '2026-01-18 02:40:56', '2026-01-18 02:40:56'),
+(6, 1, 'portfolio_photo_1768725736.png', '2026-01-18 02:42:16', '2026-01-18 02:42:16'),
+(7, 1, 'portfolio_photo_1768725741.png', '2026-01-18 02:42:21', '2026-01-18 02:42:21'),
+(8, 4, 'portfolio_photo_1768725816.png', '2026-01-18 02:43:36', '2026-01-18 02:43:36'),
+(9, 4, 'portfolio_photo_1768725820.png', '2026-01-18 02:43:40', '2026-01-18 02:43:40'),
+(10, 2, 'portfolio_photo_1768725896.png', '2026-01-18 02:44:56', '2026-01-18 02:44:56'),
+(11, 2, 'portfolio_photo_1768725900.png', '2026-01-18 02:45:00', '2026-01-18 02:45:00'),
+(12, 6, 'portfolio_photo_1768725967.png', '2026-01-18 02:46:07', '2026-01-18 02:46:07'),
+(13, 6, 'portfolio_photo_1768725971.png', '2026-01-18 02:46:11', '2026-01-18 02:46:11');
+
 -- --------------------------------------------------------
 
 --
@@ -511,7 +529,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('PBUKOzWcSBrOR8KtCC5oOzlCpp7M14bjY0NmThkB', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRFVKZ0xZV1NsWDhQOVdWbEtpVmF6dkZ4MzZZdEN2cURId01PdFVCViI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vcG9ydGZvbGlvL2luZGV4IjtzOjU6InJvdXRlIjtzOjIxOiJhZG1pbi5wb3J0Zm9saW8uaW5kZXgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1768722245);
+('PBUKOzWcSBrOR8KtCC5oOzlCpp7M14bjY0NmThkB', 2, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRFVKZ0xZV1NsWDhQOVdWbEtpVmF6dkZ4MzZZdEN2cURId01PdFVCViI7czozOiJ1cmwiO2E6MDp7fXM6OToiX3ByZXZpb3VzIjthOjI6e3M6MzoidXJsIjtzOjQzOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYWRtaW4vcG9ydGZvbGlvL2luZGV4IjtzOjU6InJvdXRlIjtzOjIxOiJhZG1pbi5wb3J0Zm9saW8uaW5kZXgiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjI7fQ==', 1768726208);
 
 -- --------------------------------------------------------
 
@@ -859,13 +877,13 @@ ALTER TABLE `package_features`
 -- AUTO_INCREMENT for table `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `portfolio_photos`
 --
 ALTER TABLE `portfolio_photos`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `services`
