@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\PostCategory;
 
 class PostController extends Controller
 {
@@ -18,5 +19,10 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $slug)->first();
         return view('front.post', compact('post'));
+    }
+
+    public function post_by_category($slug)
+    {
+        
     }
 }

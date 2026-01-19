@@ -39,6 +39,7 @@ Route::get('/portfolio/{slug}', [PortfolioController::class, 'portfolio'])->name
 
 Route::get('/blog', [PostController::class, 'blog'])->name('blog');
 Route::get('/post/{slug}', [PostController::class, 'post'])->name('post');
+Route::get('/category/{slug}', [PostController::class, 'post_by_category'])->name('post_by_category');
 
 // Route::get('/secret', [HomeController::class, 'secret'])->name('secret')->middleware(['auth','password.confirm']);
 

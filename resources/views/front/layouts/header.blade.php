@@ -65,7 +65,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="blog.html">
+                                    <a href="{{ route('blog') }}">
                                         <span class="link-effect">
                                             <span class="effect-1">BLOG</span>
                                             <span class="effect-1">BLOG</span>
