@@ -41,6 +41,7 @@ Route::get('/blog', [PostController::class, 'blog'])->name('blog');
 Route::get('/post/{slug}', [PostController::class, 'post'])->name('post');
 Route::get('/category/{slug}', [PostController::class, 'post_by_category'])->name('post_by_category');
 Route::get('/tag/{tag_name}', [PostController::class, 'post_by_tag'])->name('post_by_tag');
+Route::get('/search', [PostController::class, 'search'])->name('search');
 
 // Route::get('/secret', [HomeController::class, 'secret'])->name('secret')->middleware(['auth','password.confirm']);
 

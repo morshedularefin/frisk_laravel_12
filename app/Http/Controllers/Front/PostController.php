@@ -35,4 +35,14 @@ class PostController extends Controller
         $posts = Post::where('tags', 'LIKE', '%' . $tag_name . '%')->orderBy('id','desc')->paginate(3);
         return view('front.tag', compact('posts', 'tag_name'));
     }
+
+    public function search(Request $request)
+    {
+        $search_text = $request->search_text;
+        $posts = Post::where('title', 'LIKE', '%' . $search_text . '%')
+                     ->orWhere('description', 'LIKE', '%' . $search_text . '%')
+                     ->orderBy('id','desc')
+                     ->paginate(3);
+        return view('front.search', compact('posts', 'search_text'));
+    }
 }

@@ -1,6 +1,6 @@
 <div class="sidebar__widget sidebar__widget-two">
     <div class="sidebar__search">
-        <form action="#">
+        <form action="{{ route('search') }}" method="GET">
             <input type="text" placeholder="Search . . ." name="search_text">
             <button type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
