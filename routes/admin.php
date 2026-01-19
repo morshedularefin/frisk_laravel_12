@@ -142,4 +142,7 @@ Route::middleware(['auth:admin', 'verified'])
     Route::get('post/comments', [AdminPostController::class, 'comments'])->name('post.comments');
     Route::post('post/comment/change/{id}', [AdminPostController::class, 'change_comment_status'])->name('post.comment.change');
     Route::post('post/comment/destroy/{id}', [AdminPostController::class, 'destroy_comment'])->name('post.comment.destroy');
+    Route::get('post/replies', [AdminPostController::class, 'replies'])->name('post.replies');
+    Route::post('post/reply/change/{id}', [AdminPostController::class, 'change_reply_status'])->name('post.reply.change');
+    Route::post('post/reply/destroy/{id}', [AdminPostController::class, 'destroy_reply'])->name('post.reply.destroy');
 });

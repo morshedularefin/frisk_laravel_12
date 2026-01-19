@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\PostCategory;
 use App\Models\Comment;
+use App\Models\Reply;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\UserCommentMail;
+use App\Mail\UserReplyMail;
 
 class PostController extends Controller
 {
@@ -76,5 +78,33 @@ class PostController extends Controller
 
 
         return redirect()->back()->with('success', 'Comment submitted successfully and is pending for the admin approval.');
+    }
+
+    public function reply_store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'reply' => 'required',
+        ]);
+
+        $reply = new Reply();
+        $reply->post_id = $request->post_id;
+        $reply->comment_id = $request->comment_id;
+        $reply->name = $request->name;
+        $reply->email = $request->email;
+        $reply->reply = $request->reply;
+        $reply->reply_by = 'User';
+        $reply->status = 'Pending';
+        $reply->save();
+
+        // Send email to admin as notification
+        $admin_data = Admin::where('id',1)->first();
+        $admin_email = $admin_data->email;
+
+        Mail::to($admin_email)->send(new UserReplyMail($validated));
+
+
+        return redirect()->back()->with('success', 'Reply submitted successfully and is pending for the admin approval.');
     }
 }

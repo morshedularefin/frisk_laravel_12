@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 19, 2026 at 09:49 AM
+-- Generation Time: Jan 19, 2026 at 10:28 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -355,7 +355,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (18, '2026_01_18_074801_create_portfolio_photos_table', 16),
 (19, '2026_01_18_095159_create_post_categories_table', 17),
 (20, '2026_01_18_102722_create_posts_table', 18),
-(21, '2026_01_19_082034_create_comments_table', 19);
+(21, '2026_01_19_082034_create_comments_table', 19),
+(22, '2026_01_19_101802_create_replies_table', 20);
 
 -- --------------------------------------------------------
 
@@ -562,6 +563,33 @@ INSERT INTO `post_categories` (`id`, `name`, `slug`, `created_at`, `updated_at`)
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `replies`
+--
+
+CREATE TABLE `replies` (
+  `id` bigint UNSIGNED NOT NULL,
+  `post_id` bigint UNSIGNED NOT NULL,
+  `comment_id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reply` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reply_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Pending',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `replies`
+--
+
+INSERT INTO `replies` (`id`, `post_id`, `comment_id`, `name`, `email`, `reply`, `reply_by`, `status`, `created_at`, `updated_at`) VALUES
+(1, 4, 2, 'Kisumu', 'kisumu@mailinator.com', 'Sea graece oportere ea, ei dicant sensibus consequuntur usu. Vis reque vivendum eu, eu per solet maluisset, te percipit consectetuer eum.', 'User', 'Pending', '2026-01-19 04:26:11', '2026-01-19 04:26:11'),
+(3, 4, 1, 'Loty Loviwi', 'lotyloviwi@mailinator.com', 'Ut omnium scripserit usu, eam at veri rebum detracto, ne sit viderer efficiantur.', 'User', 'Pending', '2026-01-19 04:27:46', '2026-01-19 04:27:46');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `services`
 --
 
@@ -613,7 +641,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('KC2luuQD1eBGiNR70i5f8IkQOlSMLcmIZUaZeZre', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRjMyOFVWS3BtVFdSYVZjcHZ1TjFWQVIxUkZ0OEJZd1RTdU5lclBWRSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Njc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0L2ZpdmUtd2lubmluZy12b2ljZS1zZWFyY2gtbWFya2V0aW5nLXRpcHMiO3M6NToicm91dGUiO3M6NDoicG9zdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1768816046);
+('KC2luuQD1eBGiNR70i5f8IkQOlSMLcmIZUaZeZre', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRjMyOFVWS3BtVFdSYVZjcHZ1TjFWQVIxUkZ0OEJZd1RTdU5lclBWRSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Njc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0L2ZpdmUtd2lubmluZy12b2ljZS1zZWFyY2gtbWFya2V0aW5nLXRpcHMiO3M6NToicm91dGUiO3M6NDoicG9zdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1768818471);
 
 -- --------------------------------------------------------
 
@@ -867,6 +895,12 @@ ALTER TABLE `post_categories`
   ADD UNIQUE KEY `post_categories_slug_unique` (`slug`);
 
 --
+-- Indexes for table `replies`
+--
+ALTER TABLE `replies`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -969,7 +1003,7 @@ ALTER TABLE `marquees`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `packages`
@@ -1006,6 +1040,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `post_categories`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `replies`
+--
+ALTER TABLE `replies`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `services`

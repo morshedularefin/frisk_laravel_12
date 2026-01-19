@@ -43,6 +43,7 @@ Route::get('/category/{slug}', [PostController::class, 'post_by_category'])->nam
 Route::get('/tag/{tag_name}', [PostController::class, 'post_by_tag'])->name('post_by_tag');
 Route::get('/search', [PostController::class, 'search'])->name('search');
 Route::post('/comment-store', [PostController::class, 'comment_store'])->name('comment_store');
+Route::post('/reply-store', [PostController::class, 'reply_store'])->name('reply_store');
 
 // Route::get('/secret', [HomeController::class, 'secret'])->name('secret')->middleware(['auth','password.confirm']);
 
