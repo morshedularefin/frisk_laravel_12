@@ -185,20 +185,33 @@
                                             </div>
                                         </div>
                                         <ul class="children">
+
+                                            @foreach($comment->replies->where('status','Approved') as $reply)
                                             <li>
                                                 <div class="comments-box">
                                                     <div class="comments-avatar">
-                                                        <img src="assets/img/blog/comment02.png" alt="img">
+                                                        @php
+                                                        $email = trim(strtolower($reply->email));
+                                                        $hash = md5($email);
+                                                        $gravatar_url = "https://www.gravatar.com/avatar/$hash?s=80&d=mp";
+                                                        echo '<img src="'.$gravatar_url.'" alt="img">';
+                                                        @endphp
                                                     </div>
                                                     <div class="comments-text">
                                                         <div class="avatar-name">
-                                                            <span class="date">March 26, 2024</span>
-                                                            <h6 class="name">Farell Colins</h6>
+                                                            <span class="date">{{ $reply->created_at->format('F d, Y') }}</span>
+                                                            <h6 class="name">
+                                                                {{ $reply->name }}
+                                                                @if($reply->reply_by == 'Admin')
+                                                                    (Admin)
+                                                                @endif
+                                                            </h6>
                                                         </div>
-                                                        <p>Finanappreciate your trust greatly Our clients choose dentace ducts because know we are the best area Awaitingare really.</p>
+                                                        <p>{{ $reply->reply }}</p>
                                                     </div>
                                                 </div>
                                             </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     @endforeach

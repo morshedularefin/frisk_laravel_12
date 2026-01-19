@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\PostCategory;
 use App\Models\Comment;
+use App\Models\Reply;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AdminCommentStatusChangeMail;
+use App\Mail\AdminReplyStatusChangeMail;
 
 class AdminPostController extends Controller
 {
@@ -130,5 +132,58 @@ class AdminPostController extends Controller
         $comment->delete();
 
         return back()->with('success', 'Comment deleted successfully.');
+    }
+
+
+    public function replies()
+    {
+        $replies = Reply::orderBy('id','desc')->get();
+        return view('admin.post.reply', compact('replies'));
+    }
+
+    public function change_reply_status(Request $request, $id)
+    {
+        $reply = Reply::where('id', $id)->first();
+        if($reply->status == 'Approved') {
+            $reply->status = 'Pending';
+        } else {
+            $reply->status = 'Approved';
+            // Send email to commenter when approved
+            $data = [
+                'name' => $reply->name,
+                'email' => $reply->email,
+                'post_slug' => $reply->post->slug,
+            ];
+            Mail::to($reply->email)->send(new AdminReplyStatusChangeMail($data));
+        }
+        $reply->save();
+        return back()->with('success', 'Reply status changed successfully.');
+    }
+
+    public function destroy_reply(Request $request, $id)
+    {
+        $reply = Reply::where('id', $id)->first();
+        $reply->delete();
+
+        return back()->with('success', 'Reply deleted successfully.');
+    }
+
+    public function admin_reply(Request $request)
+    {
+        $request->validate([
+            'reply' => 'required|string',
+        ]);
+
+        $reply = new Reply();
+        $reply->post_id = $request->post_id;
+        $reply->comment_id = $request->comment_id;
+        $reply->name = Auth::guard('admin')->user()->name;
+        $reply->email = Auth::guard('admin')->user()->email;
+        $reply->reply = $request->reply;
+        $reply->reply_by = 'Admin';
+        $reply->status = 'Approved';
+        $reply->save();
+
+        return back()->with('success', 'Replied to comment successfully.');
     }
 }

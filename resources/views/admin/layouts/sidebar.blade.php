@@ -41,11 +41,14 @@
                     <li class="{{ Route::is('admin.post-category.*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.post-category.index') }}""><i class="fas fa-angle-right"></i> Post Category</a>
                     </li>
-                    <li class="{{ Route::is('admin.post.*') ? 'active' : '' }}">
+                    <li class="{{ Route::is('admin.post.index') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.post.index') }}""><i class="fas fa-angle-right"></i> Post</a>
                     </li>
                     <li class="{{ Route::is('admin.post.comments') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('admin.post.comments') }}""><i class="fas fa-angle-right"></i> Comments</a>
+                    </li>
+                    <li class="{{ Route::is('admin.post.replies') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('admin.post.replies') }}""><i class="fas fa-angle-right"></i> Replies</a>
                     </li>
                 </ul>
             </li>

@@ -145,4 +145,5 @@ Route::middleware(['auth:admin', 'verified'])
     Route::get('post/replies', [AdminPostController::class, 'replies'])->name('post.replies');
     Route::post('post/reply/change/{id}', [AdminPostController::class, 'change_reply_status'])->name('post.reply.change');
     Route::post('post/reply/destroy/{id}', [AdminPostController::class, 'destroy_reply'])->name('post.reply.destroy');
+    Route::post('post/reply/admin_reply', [AdminPostController::class, 'admin_reply'])->name('post.reply.admin_reply');
 });

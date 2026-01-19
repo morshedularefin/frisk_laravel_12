@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 19, 2026 at 10:28 AM
+-- Generation Time: Jan 19, 2026 at 10:56 AM
 -- Server version: 8.0.40
 -- PHP Version: 8.4.1
 
@@ -173,9 +173,9 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `post_id`, `name`, `email`, `comment`, `status`, `created_at`, `updated_at`) VALUES
-(1, 4, 'Uta Medina', 'uta_medina@example.com', 'An aperiri eligendi antiopam sed, novum maiorum qui et. Et cum verear regione sensibus, te autem novum tritani quo. Ut qui dolor efficiantur, sed solet instructior et. Autem sonet affert est an, an vix iuvaret bonorum elaboraret.', 'Approved', '2026-01-19 02:31:10', '2026-01-19 03:46:13'),
-(2, 4, 'TaShya Boyle', 'wacoqygom@mailinator.com', 'Eos et solum dolor fierent, dicit choro definitiones ei mei. Eu persius fabellas perfecto est. Bonorum delectus urbanitas eos ei. Est primis habemus conclusionemque et, quodsi saperet necessitatibus ea mei, elitr tollit voluptaria vis id.', 'Approved', '2026-01-19 02:32:35', '2026-01-19 02:32:35'),
-(10, 3, 'Alexis Delgado', 'johemohimu@mailinator.com', 'Veri debet lobortis ad sed. Vitae lobortis vel ad, sea audiam praesent iudicabit ut. Nam prompta iracundia ea, ex esse melius omittantur vis.', 'Approved', '2026-01-19 03:37:35', '2026-01-19 03:42:23');
+(1, 4, 'Uta Medina', 'uta_medina@example.com', 'An aperiri eligendi antiopam sed, novum maiorum qui et. Et cum verear regione sensibu.', 'Approved', '2026-01-19 02:31:10', '2026-01-19 03:46:13'),
+(2, 4, 'TaShya Boyle', 'wacoqygom@mailinator.com', 'Eos et solum dolor fierent, dicit choro definitiones ei mei. Eu persius fabellas perfecto est.', 'Approved', '2026-01-19 02:32:35', '2026-01-19 02:32:35'),
+(10, 3, 'Alexis Delgado', 'johemohimu@mailinator.com', 'Veri debet lobortis ad sed. Vitae lobortis vel ad, sea audiam praesent iudicabit ut.', 'Approved', '2026-01-19 03:37:35', '2026-01-19 03:42:23');
 
 -- --------------------------------------------------------
 
@@ -584,8 +584,9 @@ CREATE TABLE `replies` (
 --
 
 INSERT INTO `replies` (`id`, `post_id`, `comment_id`, `name`, `email`, `reply`, `reply_by`, `status`, `created_at`, `updated_at`) VALUES
-(1, 4, 2, 'Kisumu', 'kisumu@mailinator.com', 'Sea graece oportere ea, ei dicant sensibus consequuntur usu. Vis reque vivendum eu, eu per solet maluisset, te percipit consectetuer eum.', 'User', 'Pending', '2026-01-19 04:26:11', '2026-01-19 04:26:11'),
-(3, 4, 1, 'Loty Loviwi', 'lotyloviwi@mailinator.com', 'Ut omnium scripserit usu, eam at veri rebum detracto, ne sit viderer efficiantur.', 'User', 'Pending', '2026-01-19 04:27:46', '2026-01-19 04:27:46');
+(1, 4, 2, 'Kisumu', 'kisumu@mailinator.com', 'Sea graece oportere ea, ei dicant sensibus consequuntur usu. Vis reque vivendum eu.', 'User', 'Approved', '2026-01-19 04:26:11', '2026-01-19 04:44:24'),
+(3, 4, 1, 'Loty Loviwi', 'lotyloviwi@mailinator.com', 'Ut omnium scripserit usu, eam at veri rebum detracto, ne sit viderer efficiantur.', 'User', 'Approved', '2026-01-19 04:27:46', '2026-01-19 04:43:26'),
+(4, 4, 1, 'Morshedul Arefin', 'admin@example.com', 'Thank you so much for the awesome and good comment.', 'Admin', 'Approved', '2026-01-19 04:51:10', '2026-01-19 04:51:10');
 
 -- --------------------------------------------------------
 
@@ -641,7 +642,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('KC2luuQD1eBGiNR70i5f8IkQOlSMLcmIZUaZeZre', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRjMyOFVWS3BtVFdSYVZjcHZ1TjFWQVIxUkZ0OEJZd1RTdU5lclBWRSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Njc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0L2ZpdmUtd2lubmluZy12b2ljZS1zZWFyY2gtbWFya2V0aW5nLXRpcHMiO3M6NToicm91dGUiO3M6NDoicG9zdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1768818471);
+('KC2luuQD1eBGiNR70i5f8IkQOlSMLcmIZUaZeZre', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRjMyOFVWS3BtVFdSYVZjcHZ1TjFWQVIxUkZ0OEJZd1RTdU5lclBWRSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Njc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wb3N0L2ZpdmUtd2lubmluZy12b2ljZS1zZWFyY2gtbWFya2V0aW5nLXRpcHMiO3M6NToicm91dGUiO3M6NDoicG9zdCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUyOiJsb2dpbl9hZG1pbl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7fQ==', 1768820064);
 
 -- --------------------------------------------------------
 
@@ -1045,7 +1046,7 @@ ALTER TABLE `post_categories`
 -- AUTO_INCREMENT for table `replies`
 --
 ALTER TABLE `replies`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `services`
